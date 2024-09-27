@@ -11,5 +11,5 @@ git config --global user.email "lmchaveslop@gmail.com"
 
 ## 3. Edición de perfil
 
-[imgs] (../imgs/Captura%20desde%202024-09-27%2012-49-58.png)
+![Captura de Configuración](https://github.com/lmchaves/OrganizarTaller/blob/Objetivo-0/imgs/Captura%20desde%202024-09-27%2012-49-58.png)
 
