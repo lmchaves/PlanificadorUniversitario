@@ -1,16 +1,13 @@
 # Sistema de Gestión de Taller de Coches
 
 ## Descripción del Proyecto
-Este proyecto está enfocado en desarrollar una aplicación para optimizar la gestión de un taller de coches. A través de la aplicación, se busca facilitar la planificación y control de tareas como la gestión de citas, el seguimiento de reparaciones, el control del inventario de piezas, y la emisión de facturas de manera eficiente. 
+Los talleres de coches enfrentan diversos desafíos que afectan su eficiencia operativa y la satisfacción del cliente:
 
-El objetivo es proporcionar una solución integral que mejore la organización interna del taller, incremente la productividad, y mejore la experiencia del cliente, permitiendo gestionar en tiempo real las reparaciones y el estado de los vehículos.
+1. Desorganización en la gestión de citas: Los talleres suelen recibir múltiples citas diarias, lo que genera descoordinación y confusión cuando no se cuenta con un sistema claro para agendar y organizar las reservas de los clientes. 
 
-### Problema que se quiere resolver
-Los talleres de coches suelen enfrentar varios problemas organizativos:
-1. Dificultad para gestionar las citas de clientes.
-2. Falta de seguimiento eficiente de las reparaciones de vehículos.
-3. Problemas con el control del inventario de piezas.
-4. Procesos manuales y lentos de facturación.
+2. Gestión ineficiente del inventario: Muchos talleres no tienen control automatizado de las piezas disponibles, lo que puede llevar a una escasez de piezas críticas o, por el contrario, a tener un exceso de inventario innecesario.
+
+3. Procesos manuales en la facturación y registro de pagos: El uso de procesos manuales para generar facturas, registrar pagos o realizar cobros puede ser lento y propenso a errores. 
 
 Con una solución tecnológica en la nube, se pretende centralizar la gestión de todas estas operaciones, mejorando la eficiencia y productividad del taller.
 
