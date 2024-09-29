@@ -1,19 +1,10 @@
 # Sistema de Gestión de Taller de Coches
 
-## Descripción del Proyecto
-Los talleres de coches enfrentan diversos desafíos que afectan su eficiencia operativa y la satisfacción del cliente:
+## Descripción del Problema
+Un taller de coches tiene un problema de organización que afecta el funcionamiento diario y la calidad del servicio ofrecido a los clientes. La falta de una estructura clara y eficiente en la gestión de las operaciones clave, como la programación de citas, el control del inventario de piezas y el seguimiento del progreso en las reparaciones, genera ineficiencias.
 
-1. Desorganización en la gestión de citas: Los talleres suelen recibir múltiples citas diarias, lo que genera descoordinación y confusión cuando no se cuenta con un sistema claro para agendar y organizar las reservas de los clientes. 
+Esta desorganización causa retrasos en la atención de los clientes, errores en la disponibilidad de piezas y tiempos de espera más largos de lo necesario. Como resultado, no solo se afecta la satisfacción del cliente, sino que también se incrementan los costos operativos, lo que impacta negativamente la productividad y rentabilidad del taller. El problema esencial radica en la falta de un sistema adecuado que centralice y coordine las diferentes tareas del día a día de manera óptima.
 
-2. Gestión ineficiente del inventario: Muchos talleres no tienen control automatizado de las piezas disponibles, lo que puede llevar a una escasez de piezas críticas o, por el contrario, a tener un exceso de inventario innecesario.
-
-3. Procesos manuales en la facturación y registro de pagos: El uso de procesos manuales para generar facturas, registrar pagos o realizar cobros puede ser lento y propenso a errores. 
-
-Con una solución tecnológica en la nube, se pretende centralizar la gestión de todas estas operaciones, mejorando la eficiencia y productividad del taller.
-
-#### Enlaces interesantes
-1. Gestión de taller en la nube: https://www.css.es/blog/gestion-de-taller-en-la-nube-todo-ventajas-con-css.html
-2. RemOnline (software para talleres): https://remonline.app/es/autoservice/
 
 
 
