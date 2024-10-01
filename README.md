@@ -1,11 +1,8 @@
 # Sistema de Gestión de Taller de Coches
 
 ## Descripción del Problema
-Un taller de coches tiene un problema de organización que afecta el funcionamiento diario y la calidad del servicio ofrecido a los clientes. La falta de una estructura clara y eficiente en la gestión de las operaciones clave, como la programación de citas, el control del inventario de piezas y el seguimiento del progreso en las reparaciones, genera ineficiencias.
+Un taller de coches está experimentando dificultades organizativas que impactan negativamente en su eficiencia operativa y la satisfacción del cliente. El problema principal radica en la falta de un sistema adecuado para coordinar las citas de los clientes con la disponibilidad de las piezas necesarias para las reparaciones. Esto genera retrasos frecuentes, ya que a menudo los mecánicos no pueden comenzar las reparaciones a tiempo, o los clientes deben esperar más de lo previsto.
 
-Esta desorganización causa retrasos en la atención de los clientes, errores en la disponibilidad de piezas y tiempos de espera más largos de lo necesario. Como resultado, no solo se afecta la satisfacción del cliente, sino que también se incrementan los costos operativos, lo que impacta negativamente la productividad y rentabilidad del taller. El problema esencial radica en la falta de un sistema adecuado que centralice y coordine las diferentes tareas del día a día de manera óptima.
-
-
-
+Este problema causa frustración tanto en el personal como en los clientes, y afecta la productividad del taller al impedir un flujo de trabajo eficiente.
 
 https://github.com/lmchaves/OrganizarTaller/pull/1
