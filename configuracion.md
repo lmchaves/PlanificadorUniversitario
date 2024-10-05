@@ -13,3 +13,9 @@ git config --global user.email "lmchaveslop@gmail.com"
 
 ![Captura de Configuración](https://github.com/lmchaves/OrganizarTaller/blob/Objetivo-0/imgs/Captura%20desde%202024-09-27%2012-49-58.png)
 
+## 4. Clave pública en Github
+
+![Captura de Clave] (https://github.com/lmchaves/OrganizarTaller/blob/Objetivo-0/imgs/clave.png?raw=true)
+
+## 5. Uso de la clave
+![Captura de Uso de Clave] (https://github.com/lmchaves/OrganizarTaller/blob/Objetivo-0/imgs/uso-clave.png?raw=true)
