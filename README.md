@@ -7,4 +7,3 @@ tiempos de entrega estimados de las piezas,
 priorización de las reparaciones según la urgencia del cliente y la disponibilidad de las piezas. Para ello, disponemos de los datos de costos de transporte y tiempos estimados de entrega entre las sedes, lo que nos permitirá optimizar estos procesos de manera eficiente y realizar pruebas sobre la mejora en la gestión del flujo de piezas.
 
 
-https://github.com/lmchaves/OrganizarTaller/pull/1
