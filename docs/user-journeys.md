@@ -10,5 +10,7 @@ Quiero un sistema que me permita supervisar la disponibilidad de piezas en tiemp
 ## Javier
 34 años, mecánico del taller.
 
- Mi trabajo se basa en realizar reparaciones eficaces y rápidas en los vehículos de los clientes, lo que depende en gran medida de la disponibilidad de las piezas. Cuando llega un coche para reparar, primero realizo un diagnóstico para identificar las piezas que necesito. Mi siguiente paso es consultar el sistema para verificar si esas piezas están disponibles en la sede o si deben ser solicitadas desde otra. Necesito un sistema que me permita consultar la disponibilidad de las piezas en tiempo real y que me brinde estimaciones de tiempo de entrega precisas. Esto me permitirá gestionar mejor mis tareas y comunicarme de manera efectiva con los clientes sobre cuándo pueden esperar que sus vehículos estén listos.
+Mi trabajo se basa en realizar reparaciones eficaces y rápidas en los vehículos de los clientes, lo que depende en gran medida de la disponibilidad de las piezas. Cuando llega un coche para reparar, primero realizo un diagnóstico para identificar las piezas que necesito. Mi siguiente paso es consultar el sistema para verificar si esas piezas están disponibles en la sede o si deben ser solicitadas desde otra. 
+ 
+Necesito un sistema que me permita consultar la disponibilidad de las piezas en tiempo real y que me brinde estimaciones de tiempo de entrega precisas. Esto me permitirá gestionar mejor mis tareas y comunicarme de manera efectiva con los clientes sobre cuándo pueden esperar que sus vehículos estén listos.
 
