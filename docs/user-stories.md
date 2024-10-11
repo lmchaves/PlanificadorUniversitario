@@ -2,9 +2,9 @@
 
 ## [HU1] Mecánico del taller
 
-Soy Javier, mécanico y me encargo de atender al cliente.
+Soy Javier, mécanico y encargado de atender al cliente.
 
-Quiero consultar la disponibilidad de las piezas necesarias para la reparación del cliente, confirmando si el taller tiene las piezas o si deben solicitarse. Esto me permitirá informar al cliente sobre los tiempos estimados para la reparación de manera precisa y rápida.
+Cuando un cliente llega le atiendo, examinando su vehículo y anotando las piezas necesarias. Quiero poder consultar la disponibilidad de las piezas necesarias para la reparación del cliente, confirmando si el taller tiene las piezas o si deben solicitarse. Esto me permitirá informar al cliente sobre los tiempos estimados para la reparación de manera precisa y rápida.
 
 ## [HU2] Jefe del Taller: Supervisión
 Soy Manuel, jefe del taller y administrador.
