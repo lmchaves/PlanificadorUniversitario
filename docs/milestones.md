@@ -15,7 +15,6 @@ Implementar la funcionalidad que permita a Javier, el mecánico, consultar la di
 
 - __Entregable__:
     - Código con la funcionalidad de consulta de inventario para el mecánico.
-    - Sistema que ofrezca información sobre la disponibilidad de las piezas y tiempos de entrega.
 - __Viabilidad__:
 Se considerará completado cuando Javier pueda realizar consultas de piezas, recibir tiempos estimados de entrega, y los tests automáticos validen la funcionalidad implementada.
 
