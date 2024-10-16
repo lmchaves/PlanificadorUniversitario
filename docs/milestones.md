@@ -1,5 +1,5 @@
 # [M0] Milestone 0: Modelado del problema
-- __Objetivo__ : Crear un modelo que represente los elementos del dominio del problema, reflejando la estructura del taller automotriz y los procesos de gestión logística.
+- __Objetivo__ : Analizar los diferentes HUs para crear un modelo que represente los elementos del dominio del problema, reflejando la estructura del taller automotriz y los procesos de gestión logística.
 Este modelo debe definir claramente las clases que intervienen en el sistema, como Piezas, Inventario, Reparaciones, Sedes, Transporte, y Clientes. Cada clase deberá incluir sus características relevantes y los comportamientos necesarios.
 - __Entregable__:
     - Código que refleje los elementos del dominio, incluyendo clases para Piezas, Inventario, Reparaciones, Sedes, Transporte, Clientes y cualquier otra clase necesaria.
