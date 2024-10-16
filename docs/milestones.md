@@ -11,7 +11,7 @@ ser utilizados en la implementación de la lógica de negocio.
 
 # [M1] Milestone 1: Implementación de la consulta de disponibilidad de piezas
 - __Objetivo__:
-Implementar la funcionalidad que permita a Javier, el mecánico, consultar la disponibilidad de las piezas en el sistema en tiempo real. La información incluirá si la pieza está disponible en el taller local o si debe solicitarse desde otra sede, junto con tiempos estimados de entrega.
+Implementar la funcionalidad que permita a Javier, el mecánico, consultar la disponibilidad de las piezas en el sistema. La información incluirá si la pieza está disponible en el taller local o si debe solicitarse desde otra sede, junto con tiempos estimados de entrega.
 
 - __Entregable__:
     - Código con la funcionalidad de consulta de inventario para el mecánico.
