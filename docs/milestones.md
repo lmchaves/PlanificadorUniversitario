@@ -18,13 +18,14 @@ Implementar la funcionalidad que permita a Javier, el mecánico, consultar la di
 - __Viabilidad__:
 Se considerará completado cuando Javier pueda realizar consultas de piezas, recibir tiempos estimados de entrega, y los tests automáticos validen la funcionalidad implementada.
 
-# [M2] Milestone 3: Gestión de la priorización de reparaciones
+# [M2] Milestone 2:  Implementación de pedidos de piezas
 - __Objetivo__:
-Implementar la funcionalidad que permita a Manuel priorizar las reparaciones según la urgencia del cliente, la disponibilidad de las piezas y los tiempos de entrega. Esto mejorará la asignación de recursos en el taller y la comunicación con los clientes.
+Implementar la lógica que permita gestionar las solicitudes de piezas entre las diferentes sedes, priorizando los factores de costos de transporte, tiempos estimados de entrega y la urgencia de las reparaciones.
 
 - __Entregable__:
-    - Código que permita gestionar y visualizar la prioridad de las reparaciones basadas en la urgencia y disponibilidad de las piezas.
+    - Algoritmo de optimización que seleccione la mejor sede para enviar la pieza, teniendo en cuenta los criterios de costos, tiempos de entrega y la prioridad de la reparación.
+    - Código de priorización que permita identificar las reparaciones más urgentes y asignar recursos de manera eficiente.
 
 - __Viabilidad__:
-El hito se completará cuando las reparaciones estén correctamente priorizadas en función de los datos ingresados, y los tests automáticos verifiquen que las reparaciones urgentes se gestionan de manera eficiente.
+Se considerará completado cuando el algoritmo de optimización asigne correctamente las piezas entre sedes, respetando los criterios de costos, tiempos y prioridades. 
 
