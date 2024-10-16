@@ -13,3 +13,4 @@ Para ello, disponemos de los datos de costos de transporte y tiempos estimados d
 ## Documentación adicional
 - [Historias de usuario](./docs/user-stories.md)
 - [Viajes de usuario](./docs/user-journeys.md)
+- [Milestones](./docs/milestones.md)
