@@ -9,3 +9,14 @@ Este modelo debe definir claramente las clases que intervienen en el sistema, co
 Se considerará completado cuando el modelado en código esté validado y represente correctamente las interacciones del dominio, y cuando los elementos estén listos para
 ser utilizados en la implementación de la lógica de negocio.
 
+# [M1] Milestone 1: Implementación de la consulta de disponibilidad de piezas
+- __Objetivo__:
+Implementar la funcionalidad que permita a Javier, el mecánico, consultar la disponibilidad de las piezas en el sistema en tiempo real. La información incluirá si la pieza está disponible en el taller local o si debe solicitarse desde otra sede, junto con tiempos estimados de entrega.
+
+- __Entregable__:
+
+Código con la funcionalidad de consulta de inventario para el mecánico.
+Sistema que ofrezca información sobre la disponibilidad de las piezas y tiempos de entrega.
+- __Viabilidad__:
+Se considerará completado cuando Javier pueda realizar consultas de piezas, recibir tiempos estimados de entrega, y los tests automáticos validen la funcionalidad implementada.
+
