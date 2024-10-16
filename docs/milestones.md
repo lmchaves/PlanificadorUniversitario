@@ -19,7 +19,7 @@ Implementar la funcionalidad que permita a Javier, el mecánico, consultar la di
 - __Viabilidad__:
 Se considerará completado cuando Javier pueda realizar consultas de piezas, recibir tiempos estimados de entrega, y los tests automáticos validen la funcionalidad implementada.
 
-# [M3] Milestone 3: Gestión de la priorización de reparaciones
+# [M2] Milestone 3: Gestión de la priorización de reparaciones
 - __Objetivo__:
 Implementar la funcionalidad que permita a Manuel priorizar las reparaciones según la urgencia del cliente, la disponibilidad de las piezas y los tiempos de entrega. Esto mejorará la asignación de recursos en el taller y la comunicación con los clientes.
 
