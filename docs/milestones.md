@@ -1,4 +1,4 @@
-# [M0] Milestone 0: Modelado del problema
+[# [M0] Milestone 0: Modelado del problema](https://github.com/lmchaves/OrganizarTaller/milestone/4)
 - __Objetivo__ : Analizar los diferentes HUs para crear un modelo que represente los elementos del dominio del problema, reflejando la estructura del taller automotriz y los procesos de gestión logística.
 Este modelo debe definir claramente las clases que intervienen en el sistema, como Piezas, Inventario, Reparaciones, Sedes, Transporte, y Clientes. Cada clase deberá incluir sus características relevantes y los comportamientos necesarios.
 - __Entregable__:
@@ -9,7 +9,7 @@ Este modelo debe definir claramente las clases que intervienen en el sistema, co
 Se considerará completado cuando el modelado en código esté validado y represente correctamente las interacciones del dominio, y cuando los elementos estén listos para
 ser utilizados en la implementación de la lógica de negocio.
 
-# [M1] Milestone 1: Implementación de la consulta de disponibilidad de piezas
+[# [M1] Milestone 1: Implementación de la consulta de disponibilidad de piezas](https://github.com/lmchaves/OrganizarTaller/milestone/2)
 - __Objetivo__:
 Implementar la funcionalidad que permita a Javier, el mecánico, consultar la disponibilidad de las piezas en el sistema. La información incluirá si la pieza está disponible en el taller local o si debe solicitarse desde otra sede, junto con tiempos estimados de entrega.
 
@@ -18,7 +18,7 @@ Implementar la funcionalidad que permita a Javier, el mecánico, consultar la di
 - __Viabilidad__:
 Se considerará completado cuando Javier pueda realizar consultas de piezas, recibir tiempos estimados de entrega, y los tests automáticos validen la funcionalidad implementada.
 
-# [M2] Milestone 2:  Implementación de pedidos de piezas
+[# [M2] Milestone 2:  Implementación de pedidos de piezas](https://github.com/lmchaves/OrganizarTaller/milestone/3)
 - __Objetivo__:
 Implementar la lógica que permita gestionar las solicitudes de piezas entre las diferentes sedes, priorizando los factores de costos de transporte, tiempos estimados de entrega y la urgencia de las reparaciones.
 
