@@ -1,13 +1,11 @@
 # [ [M0] Milestone 0: Modelado del problema](https://github.com/lmchaves/OrganizarTaller/milestone/4)
-- __Objetivo__ : Analizar los diferentes HUs para crear un modelo que represente los elementos del dominio del problema, reflejando la estructura del taller automotriz y los procesos de gestión logística.
-Este modelo debe definir claramente las clases que intervienen en el sistema, como Piezas, Inventario, Reparaciones, Sedes, Transporte, y Clientes. Cada clase deberá incluir sus características relevantes y los comportamientos necesarios.
+- __Objetivo__ : Analizar las diferentes Historias de Usuario para identificar los elementos clave que intervienen en el sistema del taller. A partir de este análisis, se desarrollará una representación clara de las entidades principales del sistema, como Piezas, Inventario, Reparaciones, Sedes, Transporte, y Clientes.
 - __Entregable__:
-    - Código que refleje los elementos del dominio, incluyendo clases para Piezas, Inventario, Reparaciones, Sedes, Transporte, Clientes y cualquier otra clase necesaria.
+    - Código que refleje los elementos del dominio.
     - El código también debe reflejar las relaciones entre estos elementos, como la interacción entre inventario y sedes, el flujo de piezas entre diferentes localidades, y cómo los tiempos de entrega y costos afectan la distribución de piezas.
 
 - __Viabilidad__:
-Se considerará completado cuando el modelado en código esté validado y represente correctamente las interacciones del dominio, y cuando los elementos estén listos para
-ser utilizados en la implementación de la lógica de negocio.
+Se considerará completado cuando el modelado en código esté validado y represente correctamente las interacciones del dominio, y cuando los elementos estén listos para ser utilizados en la implementación de la lógica de negocio.
 
 # [ [M1] Milestone 1: Implementación de la consulta de disponibilidad de piezas](https://github.com/lmchaves/OrganizarTaller/milestone/2)
 - __Objetivo__:
