@@ -1,11 +1,11 @@
 # [ [M0] Milestone 0: Modelado del problema](https://github.com/lmchaves/OrganizarTaller/milestone/4)
-- Analizar las diferentes Historias de Usuario para identificar los elementos clave que intervienen en el sistema del taller. A partir de este análisis, se desarrollará una representación clara de las entidades principales del sistema, como Piezas, Inventario, Reparaciones, Sedes, Transporte, y Clientes.
+- Definir el dominio del problema centrado en las Historias de Usuario HU1 y HU2. Se desarrollará un modelo inicial que represente las entidades clave involucradas y las interacciones entre ellas, como la gestión del inventario, disponibilidad de piezas y transporte entre sedes.
 - __Entregable__:
-    - Código que refleje los elementos del dominio.
-    - El código también debe reflejar las relaciones entre estos elementos, como la interacción entre inventario y sedes, el flujo de piezas entre diferentes localidades, y cómo los tiempos de entrega y costos afectan la distribución de piezas.
+    - Código que implemente las entidades principales relacionadas con las HU1 y HU2, incluyendo: Piezas, Inventario, Sedes y Transporte.
+    - El código debe mostrar las relaciones entre estas entidades, como la interacción entre inventario y sedes, el flujo de piezas entre sedes, y cómo los tiempos de transporte afectan la disponibilidad.
 
 - __Viabilidad__:
-Se considerará completado cuando el modelado en código esté validado y represente correctamente las interacciones del dominio, y cuando los elementos estén listos para ser utilizados en la implementación de la lógica de negocio.
+Se considerará completado cuando el código refleje correctamente las interacciones del dominio descrito en las HU1 y HU2.
 
 # [ [M1] Milestone 1: Implementación de la consulta de disponibilidad de piezas](https://github.com/lmchaves/OrganizarTaller/milestone/2)
 - Implementar la funcionalidad que permita a Javier, el mecánico, consultar la disponibilidad de las piezas en el sistema. La información incluirá si la pieza está disponible en el taller local o si debe solicitarse desde otra sede, junto con tiempos estimados de entrega.
