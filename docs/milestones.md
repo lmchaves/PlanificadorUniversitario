@@ -6,14 +6,14 @@
 Se considerará completado cuando el código refleje correctamente el dominio del problema descrito en las [HU1](https://github.com/lmchaves/OrganizarTaller/issues/4) y [HU2](https://github.com/lmchaves/OrganizarTaller/issues/5).
 
 # [ [M1] Milestone 1: Implementación de la consulta de disponibilidad de piezas](https://github.com/lmchaves/OrganizarTaller/milestone/2)
-- Implementar la funcionalidad que permita a Javier, el mecánico, consultar la disponibilidad de las piezas en el sistema. La información incluirá si la pieza está disponible en el taller local o si debe solicitarse desde otra sede, junto con tiempos estimados de entrega.
+- IImplementar la funcionalidad que permita a Javier, el mecánico, consultar la disponibilidad de piezas en el sistema. La información incluirá si la pieza está disponible en el taller local y, en caso de no estarlo, mostrará los tiempos estimados de entrega desde otras sedes.
 
 - __Entregable__:
-    - Código con la funcionalidad de consulta de inventario para el mecánico.
+    - Código que implemente la consulta de disponibilidad de piezas en el inventario, junto con los tiempos estimados de entrega.
 - __Viabilidad__:
-Se considerará completado cuando Javier pueda realizar consultas de piezas, recibir tiempos estimados de entrega, y los tests automáticos validen la funcionalidad implementada.
+Se considerará completado cuando Javier pueda, realizar consultas de piezas y recibir tiempos estimados de entrega.
 
-# [ [M2] Milestone 2:  Implementación de pedidos de piezas](https://github.com/lmchaves/OrganizarTaller/milestone/3)
+# [ [M2] Milestone 2: Optimización de pedidos y priorización de reparaciones](https://github.com/lmchaves/OrganizarTaller/milestone/3)
 - Implementar la lógica que permita gestionar las solicitudes de piezas entre las diferentes sedes, priorizando los factores de costos de transporte, tiempos estimados de entrega y la urgencia de las reparaciones.
 
 - __Entregable__:
