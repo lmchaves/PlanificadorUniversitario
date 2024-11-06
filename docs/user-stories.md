@@ -13,4 +13,4 @@ Necesito acceder a un sistema que me permita supervisar y gestionar el inventari
 
 ## [HU3] Jefe del Taller: Gestión de Prioridades
 
-Soy Manuel, jefe del taller, y quiero acceder a un sistema que me permita priorizar las reparaciones según la urgencia de los clientes, considerando la disponibilidad de las piezas y los tiempos de entrega estimados. Esto me permitirá asignar los recursos de manera eficiente y comunicarme con los clientes de manera más precisa sobre los plazos de entrega de sus reparaciones.
+Soy Manuel, jefe del taller, y quiero un sistema que me permita priorizar las reparaciones según la urgencia del cliente, optimizando la asignación de recursos. Para ello, el sistema debe clasificar las reparaciones de acuerdo con la urgencia indicada, la disponibilidad inmediata de las piezas, y los tiempos de entrega estimados para las piezas solicitadas cuando no estén en stock local. Esto me permitirá gestionar las reparaciones de forma eficiente y dar información precisa a los clientes sobre los tiempos de entrega.
