@@ -2,10 +2,7 @@
 
 ## Manuel
 72 años, es el Jefe del taller y administrador.
-
-Mi principal responsabilidad es garantizar que todas las piezas necesarias para las reparaciones estén disponibles y que la logística entre las distintas sedes sea eficiente. Cada mañana reviso el estado del inventario en el sistema. Presto atención a las piezas que están bajas en stock, especialmente las más demandadas. También reviso los costos de transporte entre las sedes y los tiempos de entrega estimados para cada pieza.
-
-Quiero un sistema que me permita supervisar la disponibilidad de piezas en tiempo real y que me ofrezca opciones de transporte optimizadas. De esta manera, puedo reducir los costos y asegurar que los tiempos de espera de los clientes sean mínimos.
+Como jefe del taller, Manuel tiene la responsabilidad de asegurar que todas las piezas necesarias para las reparaciones estén disponibles en el momento adecuado. Cada mañana, debe revisar el estado del inventario en cada sede del taller y supervisar el costo y tiempos de transporte de las piezas. Su objetivo es optimizar estos factores para minimizar costos y tiempos de espera, especialmente en las piezas más demandadas.
 
 ### Interacción con el sistema
 - El usuario accede al sistema e inicia sesión y selecciona la opción para revisar el estado del inventario en todas las sedes.
@@ -17,9 +14,8 @@ Quiero un sistema que me permita supervisar la disponibilidad de piezas en tiemp
 ## Javier
 34 años, mecánico del taller.
 
-Mi trabajo se basa en realizar reparaciones eficaces y rápidas en los vehículos de los clientes, lo que depende en gran medida de la disponibilidad de las piezas. Cuando llega un coche para reparar, primero realizo un diagnóstico para identificar las piezas que necesito. Mi siguiente paso es consultar el sistema para verificar si esas piezas están disponibles en la sede o si deben ser solicitadas desde otra. 
+El principal objetivo de Javier es realizar reparaciones de manera rápida y eficiente. Cada vez que un cliente llega, realiza un diagnóstico del vehículo y determina las piezas necesarias para la reparación. Su flujo de trabajo depende de la disponibilidad de piezas, y necesita estimaciones de tiempo precisas para poder comunicar a los clientes cuándo estarán listos sus vehículos.
 
-Necesito un sistema que me permita consultar la disponibilidad de las piezas en tiempo real y que me brinde estimaciones de tiempo de entrega precisas. Esto me permitirá gestionar mejor mis tareas y comunicarme de manera efectiva con los clientes sobre cuándo pueden esperar que sus vehículos estén listos.
 
 ### Interacción con el sistema
 
