@@ -12,3 +12,5 @@ Soy Javier, mécanico y encargado de atender al cliente.
 
 Cuando un cliente llega con un vehículo para reparar, mi primera tarea es examinar el vehículo y determinar las piezas necesarias para realizar el trabajo. Con frecuencia, descubro que las piezas requeridas no están disponibles en el taller, lo que genera retrasos mientras averiguo si alguna otra sede puede proporcionarlas. La falta de información clara sobre la ubicación de las piezas y el tiempo que tomará recibirlas dificulta mi capacidad de dar respuestas precisas a los clientes sobre los tiempos de espera y la finalización del servicio. 
 
+[ El precio esta de las piezas en las distintas sedes esta aquí](https://github.com/lmchaves/OrganizarTaller/tree/Objetivo-1/docs/precios)
+
