@@ -1,10 +1,10 @@
 # [ [M0] Milestone 0: Modelado del problema](https://github.com/lmchaves/OrganizarTaller/milestone/4)
-- Realizar un análisis de la [HU1](https://github.com/lmchaves/OrganizarTaller/issues/5) para identificar y definir los elementos clave del dominio relacionados con la supervisión y gestión del inventario de piezas en el taller. 
+- Realizar un análisis de la [HU1](https://github.com/lmchaves/OrganizarTaller/issues/5) para poder modelizar un punto inicial sobre el que se irá trabajando.
 - __Entregable__:
-    - Código que encapsule los elementos fundamentales del dominio, permitiendo la interacción entre entidades como pueden ser Piezas, Inventario, Sedes y los procesos de control de disponibilidad.
+    - Código que contenga los elementos necesarios para deifnir modelo, como pueden ser Piezas, Inventario, Sedes.
 - __Viabilidad__:
 El código debe seguir buenas prácticas de diseño y programación, asegurando que se puedan realizar ajustes futuros para incorporar cambios en los requisitos del negocio.
-Se considera validado mediante pruebas con conjuntos de datos de prueba, asegurando una gestión correcta de las piezas.
+Se considera válido cuando englobe los problemas expresados en la HU y haya relación entre los distintos datos.
 
 
 # [ [M1] Milestone 1: Optimización de pedidos](https://github.com/lmchaves/OrganizarTaller/milestone/3)
