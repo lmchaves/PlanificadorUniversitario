@@ -14,14 +14,6 @@ Se considera validado mediante pruebas con conjuntos de datos de prueba, asegura
     - Algoritmo de optimización que seleccione la mejor sede para pedir la pieza necesaria, teniendo en cuenta los criterios de costos de transportes entre sedes, tiempos de entrega en  función de la disponibilidad de inventario.
 
 - __Viabilidad__:
-El hito se considerará completado cuando el algoritmo de optimización asigne correctamente las piezas solicitadas a la sede adecuada, reduciendo los costos y tiempos de manera efectiva.
+Este hito se considerará completado cuando se demuestre que el algoritmo reduce de manera efectiva los tiempos y el costo promedio de entrega de piezas. Para ello, se compararán estos indicadores antes y después de la implementación del algoritmo, verificando que haya mejoras en ambos aspectos.
 
-# [ [M2] Milestone 2: Priorización de reparaciones según urgencia](https://github.com/lmchaves/OrganizarTaller/milestone/3)
-- Basándose en el sistema ya creado para gestionar y optimizar los pedidos de piezas entre las sedes, se implementarán características adicionales para priorizar las reparaciones en función de la urgencia del cliente de forma que se resuelva el problema mencionado en la HU3 [HU3](https://github.com/lmchaves/OrganizarTaller/issues/6).
-
-- __Entregable__:
-    - Código de priorización que permita identificar las reparaciones más urgentes y asignar recursos de manera eficiente. 
-
-- __Viabilidad__:
-El código se considerará validado cuando se compruebe que prioriza las reparaciones según la urgencia del cliente, optimizando la asignación de recursos en función de la disponibilidad de piezas y tiempos de entrega estimados.
 
