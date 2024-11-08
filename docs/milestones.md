@@ -1,10 +1,10 @@
 # [ [M0] Milestone 0: Modelo del problema](https://github.com/lmchaves/OrganizarTaller/milestone/4)
-- Analizar la [HU1](https://github.com/lmchaves/OrganizarTaller/issues/5) para identificar las entidades y relaciones del problema. A partir de este análisis, se desarrollará un modelo inicial en código que representará la estructura y las interacciones entre las entidades del sistema. Este modelo servirá como base para el trabajo posterior.
+- Analizar la [HU1](https://github.com/lmchaves/OrganizarTaller/issues/5) para identificar las entidades y relaciones del problema.
 - __Entregable__:
-    - Código que contenga los elementos necesarios para deifnir modelo, como pueden ser Piezas, Inventario, Sedes.
+    - Código que contenga los tipos de datos necesarios para deifnir modelo.
 - __Viabilidad__:
 El código debe seguir buenas prácticas de diseño y programación, asegurando que se puedan realizar ajustes futuros para incorporar cambios en los requisitos del negocio.
-Se considera válido cuando englobe los problemas expresados en la HU y haya relación entre los distintos datos.
+Se considera válido cuando englobe los elementos expresados en la HU y haya relación entre los distintos datos.
 
 
 # [ [M1] Milestone 1: Optimización de pedidos](https://github.com/lmchaves/OrganizarTaller/milestone/3)
