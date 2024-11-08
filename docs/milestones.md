@@ -1,5 +1,5 @@
 # [ [M0] Milestone 0: Modelado del problema](https://github.com/lmchaves/OrganizarTaller/milestone/4)
-- Analizar la [HU1](https://github.com/lmchaves/OrganizarTaller/issues/5) para identificar las entidades y relaciones del problema. A partir de este análisis, se desarrollará un modelo inicial en código que representará la estructura y las interacciones entre las entidades del sistema. Este modelo servirá como base para el trabajo posterior.
+- Realizar un análisis de la [HU1](https://github.com/lmchaves/OrganizarTaller/issues/5), a partir de el se procesarán los datos de la HU1 en código, para modelizar un punto inicial sobre el que se irá trabajando.
 - __Entregable__:
     - Código que contenga los elementos necesarios para deifnir modelo, como pueden ser Piezas, Inventario, Sedes.
 - __Viabilidad__:
