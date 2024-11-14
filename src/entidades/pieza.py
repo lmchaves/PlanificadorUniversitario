@@ -23,13 +23,4 @@ class Pieza:
         self.ubicacion_en_sede = ubicacion_en_sede
         self.costo = max(0.01, costo)  # Restricción: costo debe ser positivo
 
-    def __repr__(self):
-        """
-        Representación de la pieza como string.
-
-        Returns:
-            str: String representando la pieza.
-        """
-        return f'Pieza(id={self.pieza_id}, nombre={self.nombre}, cantidad={self.cantidad}, ' \
-               f'ubicacion_en_sede={self.ubicacion_en_sede}, costo={self.costo})'
     
