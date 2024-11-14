@@ -13,4 +13,4 @@ class Sede:
         self.sede_id = sede_id
         self.nombre = nombre
         self.ubicacion = ubicacion
-        self.inventario = inventario or {}  # Inicializa el inventario como un diccionario vacío si no se proporciona
+        self.inventario = inventario or {}  #  Diccionario donde la clave es la pieza y el valor es la cantidad
