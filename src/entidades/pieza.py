@@ -22,5 +22,4 @@ class Pieza:
         self.cantidad = max(0, cantidad)  # Restricción: cantidad no negativa
         self.ubicacion_en_sede = ubicacion_en_sede
         self.costo = max(0.01, costo)  # Restricción: costo debe ser positivo
-
-    
+        
