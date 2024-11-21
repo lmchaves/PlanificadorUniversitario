@@ -17,12 +17,9 @@ class Pieza:
         - costo debe ser positivo
     """
     def __init__(self, pieza_id: int, descripcion: str, cantidad: int, ubicacion: str, costo: float, categoria: str, tipo_vehiculo: str, es_urgente: bool):
-        # Restricción: cantidad no negativa
-        if cantidad <= 0:
-            raise ValueError("La cantidad de piezas debe ser mayor que cero.")
         self.pieza_id = pieza_id
         self.descripcion = descripcion
-        self.cantidad = cantidad
+        self.cantidad = max(0, cantidad)  # Restricción: cantidad no negativa
         self.ubicacion = ubicacion
         self.costo = max(0.01, costo)  # Restricción: costo > 0
         self.categoria = categoria
