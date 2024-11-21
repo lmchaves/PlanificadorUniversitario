@@ -1,15 +1,18 @@
+from typing import Any
+
+
 class Pieza:
     """
     Representa una pieza específica dentro del inventario de una sede.
 
     Atributos:
-        descripcion (str): Descripción detallada de la pieza.
-        cantidad (int): Cantidad disponible en inventario.
-        ubicacion (str): Ubicación actual de la pieza (sede).
-        costo (float): Costo unitario de la pieza.
-        categoria (str): Categoría a la que pertenece la pieza (e.g., motor, batería).
-        tipo_vehiculo (str): Tipo de vehículo al que corresponde la pieza.
-        es_urgente (bool): Indica si la pieza es necesaria para reparaciones urgentes.
+        _descripcion (str): Descripción detallada de la pieza.
+        _cantidad (int): Cantidad disponible en inventario.
+        _ubicacion (str): Ubicación actual de la pieza (sede).
+        _costo (float): Costo unitario de la pieza.
+        _categoria (str): Categoría a la que pertenece la pieza (e.g., motor, batería).
+        _tipo_vehiculo (str): Tipo de vehículo al que corresponde la pieza.
+        _es_urgente (bool): Indica si la pieza es necesaria para reparaciones urgentes.
 
     Restricciones:
         - cantidad no negativa
@@ -27,10 +30,10 @@ class Pieza:
             raise ValueError("La ubicación no puede estar vacía.")
 
         # Atributos inmutables
-        self._descripcion = descripcion
-        self._cantidad = cantidad
-        self._ubicacion = ubicacion
-        self._costo = costo
-        self._categoria = categoria
-        self._tipo_vehiculo = tipo_vehiculo
-        self._es_urgente = es_urgente
+        self.__descripcion = descripcion
+        self.__cantidad = cantidad
+        self.__ubicacion = ubicacion
+        self.__costo = costo
+        self.__categoria = categoria
+        self.__tipo_vehiculo = tipo_vehiculo
+        self.__es_urgente = es_urgente
