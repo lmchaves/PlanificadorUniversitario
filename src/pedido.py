@@ -21,12 +21,12 @@ class Pedido:
     Representa un pedido de piezas entre dos sedes como un objeto inmutable.
 
     Atributos:
-        piezas_requeridas (dict[Pieza, int]): Diccionario de piezas requeridas y sus cantidades.
-        sede_origen (Sede): Sede desde donde se envían las piezas.
-        sede_destino (Sede): Sede a la que se envían las piezas.
-        estado (EstadoPedido): Estado actual del pedido.
-        tiempo_estimado_llegada (float): Tiempo estimado para que la pieza llegue a la sede destino (en horas).
-        costo_transporte (float): Costo del traslado basado en distancia
+        __piezas_requeridas (dict[Pieza, int]): Diccionario de piezas requeridas y sus cantidades.
+        __sede_origen (Sede): Sede desde donde se envían las piezas.
+        _sede_destino (Sede): Sede a la que se envían las piezas.
+        __estado (EstadoPedido): Estado actual del pedido.
+        __tiempo_estimado_llegada (float): Tiempo estimado para que la pieza llegue a la sede destino (en horas).
+        __costo_transporte (float): Costo del traslado basado en distancia
     """
     def __init__(self, piezas_requeridas: dict[Pieza, int], sede_origen: Sede, sede_destino: Sede, estado: EstadoPedido, tiempo_estimado_llegada: float, costo_transporte: float):
         if tiempo_estimado_llegada <= 0:
@@ -43,10 +43,9 @@ class Pedido:
                 raise ValueError(f"La cantidad de la pieza '{pieza.descripcion}' debe ser mayor que cero.")
             
         # Inmutabilidad con frozenset
-        self.piezas_requeridas = frozenset(piezas_requeridas.items())
-        self.sede_origen = sede_origen
-        self.sede_destino = sede_destino
-        self.estado = estado
-        self.tiempo_estimado_llegada = tiempo_estimado_llegada
-        self.costo_transporte = costo_transporte
-        
+        self.__piezas_requeridas = frozenset(piezas_requeridas.items())
+        self.__sede_origen = sede_origen
+        self.__sede_destino = sede_destino
+        self.__estado = estado
+        self.__tiempo_estimado_llegada = tiempo_estimado_llegada
+        self.__costo_transporte = costo_transporte
