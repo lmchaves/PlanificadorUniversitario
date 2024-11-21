@@ -5,13 +5,14 @@ class Sede:
     Representa una sede del taller, con información de ubicación y detalles del inventario de piezas
     
     Atributos:
-      nombre (str): Nombre descriptivo de la sede
-      ubicacion (str): Ubicación geográfica de la sede
-      inventario (dict): Diccionario inmutable que mapea Pieza a cantidad disponible 
+      __nombre (str): Nombre descriptivo de la sede
+      __ubicacion (str): Ubicación geográfica de la sede
+      __inventario (dict): Diccionario inmutable que mapea Pieza a cantidad disponible 
     """
     def __init__(self, nombre: str, direccion: str, inventario: dict):
         if not nombre or not direccion:
             raise ValueError("El nombre y la dirección no pueden estar vacíos.")
+
         if not isinstance(inventario, dict):
             raise ValueError("El inventario debe ser un diccionario.")
 
@@ -22,6 +23,6 @@ class Sede:
             if cantidad < 0:
                 raise ValueError("Las cantidades en el inventario no pueden ser negativas.")
 
-        self._nombre = nombre
-        self._direccion = direccion
-        self._inventario = dict(inventario)  # Copia para garantizar inmutabilidad
+        self.__nombre = nombre
+        self.__direccion = direccion
+        self.__inventario = dict(inventario)  # Copia para garantizar inmutabilidad
