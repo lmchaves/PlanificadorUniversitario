@@ -18,9 +18,9 @@ class Transporte:
     Representa los tipos de transporte disponibles para el traslado de piezas.
 
     Atributos:
-      tipo (TipoTransporte): Tipo de transporte
-      costo_por_km (float): Costo en euros por kilómetro de transporte
-      tiempo_por_km (float): Tiempo en horas por kilómetro de transporte
+      __tipo (TipoTransporte): Tipo de transporte
+      __costo_por_km (float): Costo en euros por kilómetro de transporte
+      __tiempo_por_km (float): Tiempo en horas por kilómetro de transporte
         
     Restricciones:
       - costo_por_km debe ser mayor que cero
@@ -30,6 +30,6 @@ class Transporte:
         """
         Inicializa una nueva instancia de la clase Transporte
         """
-        self.tipo = tipo
-        self.costo_por_km = max(0.01, costo_por_km)  # Restricción: costo > 0
-        self.tiempo_por_km = max(0.01, tiempo_por_km)  # Restricción: tiempo por km > cero
+        self.__tipo = tipo
+        self.__costo_por_km = max(0.01, costo_por_km)  # Restricción: costo > 0
+        self.__tiempo_por_km = max(0.01, tiempo_por_km)  # Restricción: tiempo por km > cero
