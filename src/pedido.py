@@ -42,8 +42,8 @@ class Pedido:
             if cantidad <= 0:
                 raise ValueError(f"La cantidad de la pieza '{pieza.descripcion}' debe ser mayor que cero.")
             
-        # Inmutabilidad con frozenset
-        self.__piezas_requeridas = frozenset(piezas_requeridas.items())
+
+        self.__piezas_requeridas = piezas_requeridas
         self.__sede_origen = sede_origen
         self.__sede_destino = sede_destino
         self.__estado = estado
