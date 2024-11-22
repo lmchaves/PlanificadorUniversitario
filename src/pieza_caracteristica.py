@@ -6,21 +6,17 @@ class PiezaCaracteristica:
     Representa una pieza específica dentro del inventario de una sede.
 
     Atributos:
-        _descripcion (str): Descripción detallada de la pieza.
-        _costo (float): Costo unitario de la pieza.
-        _categoria (str): Categoría a la que pertenece la pieza (e.g., motor, batería).
-        _tipo_vehiculo (str): Tipo de vehículo al que corresponde la pieza.
+        descripcion (str): Descripción detallada de la pieza.
+        categoria_costo (dict): Diccionario que relaciona la categoría con el costo unitario de la pieza.
+        tipo_vehiculo (str): Tipo de vehículo al que corresponde la pieza.
 
     Restricciones:
         - costo debe ser positivo
     """
-    _descripcion: str
-    _costo: float
-    _categoria: str
-    _tipo_vehiculo: str
+    descripcion: str
+    categoria_costo: dict[str, float]
+    tipo_vehiculo: str
 
     def __post_init__(self):
-        if self._costo <= 0:
-            raise ValueError("El costo debe ser mayor que 0.")
-        if not self._descripcion or not self._categoria or not self._tipo_vehiculo:
-            raise ValueError("Descripción, categoría y tipo de vehículo no pueden estar vacíos.")
+        if not self.descripcion or not self.categoria_costo or not self.tipo_vehiculo:
+            raise ValueError("Descripción, categoría_costo y tipo de vehículo no pueden estar vacíos.")
