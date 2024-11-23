@@ -4,9 +4,7 @@ incluyendo sus estados y los detalles del pedido.
 """
 
 from dataclasses import dataclass
-from enum import Enum
 from pieza import PiezaInventario
-from sede import Sede
 
 @dataclass(frozen=True)
 class Pedido:
@@ -21,8 +19,8 @@ class Pedido:
         costo_transporte (float): Costo del traslado basado en distancia
     """
     piezas_requeridas: dict[PiezaInventario, int]
-    sede_origen: Sede
-    sede_destino: Sede
+    nombre_sede_origen: str
+    nombre_sede_destino: str
     tiempo_estimado_llegada: float
     costo_transporte: float
 
@@ -31,11 +29,9 @@ class Pedido:
             raise ValueError("El tiempo estimado de llegada debe ser mayor que cero.")
         if self.costo_transporte <= 0:
             raise ValueError("El costo del transporte debe ser mayor que cero.")
-        if self.sede_origen == self.sede_destino:
-            raise ValueError("La sede de origen y la sede de destino deben ser diferentes.")
         if not self.piezas_requeridas:
             raise ValueError("El pedido debe tener al menos una pieza requerida.")
         # Validacion de cantidades
         for pieza, cantidad in self.piezas_requeridas.items():
             if cantidad <= 0:
-                raise ValueError(f"La cantidad de la pieza '{pieza.descripcion}' debe ser mayor que cero.")
+                raise ValueError(f"La cantidad de la pieza '{pieza.caracteristicas.descripcion}' debe ser mayor que cero.")
