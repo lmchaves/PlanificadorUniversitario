@@ -1,6 +1,17 @@
 from dataclasses import dataclass
 from pieza import PiezaInventario
-from sede_info import SedeInfo
+
+@dataclass(frozen=True)
+class SedeInfo:
+    """
+    Objeto valor que describe las características de una sede.
+
+    Atributos:
+        nombre (str): Nombre descriptivo de la sede
+        ubicacion (str): Ubicación geográfica de la sede
+    """
+    nombre: str
+    ubicacion: str
 
 @dataclass()
 class Sede:
