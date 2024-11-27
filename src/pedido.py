@@ -4,7 +4,7 @@ incluyendo sus estados y los detalles del pedido.
 """
 
 from dataclasses import dataclass
-from pieza import PiezaInventario
+from pieza import Pieza
 
 @dataclass(frozen=True)
 class Pedido:
@@ -18,7 +18,7 @@ class Pedido:
         tiempo_estimado_llegada (float): Tiempo estimado para que la pieza llegue a la sede destino (en horas).
         costo_transporte (float): Costo del traslado basado en distancia
     """
-    piezas_requeridas: dict[PiezaInventario, int]
+    piezas_requeridas: dict[Pieza, int]
     nombre_sede_origen: str
     nombre_sede_destino: str
     tiempo_estimado_llegada: float
