@@ -1,17 +1,5 @@
 from dataclasses import dataclass
-from pieza import PiezaInventario
-
-@dataclass(frozen=True)
-class SedeInfo:
-    """
-    Objeto valor que describe las características de una sede.
-
-    Atributos:
-        nombre (str): Nombre descriptivo de la sede
-        ubicacion (str): Ubicación geográfica de la sede
-    """
-    nombre: str
-    ubicacion: str
+from pieza import Pieza
 
 @dataclass()
 class Sede:
@@ -19,11 +7,11 @@ class Sede:
     Representa una sede del taller, con información de ubicación y detalles del inventario de piezas
     
     Atributos:
-        sedeInfo (SedeInfo): Objeto valor que describe las características de la sede
+        nombre (str): Nombre de la sede
         inventario (dict): Diccionario inmutable que mapea Pieza a cantidad disponible 
     """
-    sede_info: SedeInfo
-    inventario: dict[PiezaInventario, int]
+    nombre: str
+    inventario: dict[Pieza, int]
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
@@ -31,7 +19,7 @@ class Sede:
 
         # Validación del inventario: las cantidades deben ser no negativas
         for pieza, cantidad in self.inventario.items():
-            if not isinstance(pieza, PiezaInventario):
+            if not isinstance(pieza, Pieza):
                 raise ValueError("El inventario debe contener solo objetos Pieza como claves.")
             if cantidad < 0:
                 raise ValueError("Las cantidades en el inventario no pueden ser negativas.")
