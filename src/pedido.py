@@ -4,7 +4,6 @@ incluyendo sus estados y los detalles del pedido.
 """
 
 from dataclasses import dataclass
-from pieza import Pieza
 
 @dataclass(frozen=True)
 class Pedido:
