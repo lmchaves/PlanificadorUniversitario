@@ -15,6 +15,7 @@ class Pieza:
         - costo debe ser positivo
     """
     descripcion: str
+    nombre: str
     categoria_costo: dict[str, float]
 
     def __post_init__(self):

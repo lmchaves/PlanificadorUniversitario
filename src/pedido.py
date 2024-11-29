@@ -12,13 +12,13 @@ class Pedido:
     Representa un pedido de piezas entre dos sedes como un objeto inmutable.
 
     Atributos:
-        piezas_requeridas (dict[Pieza, int]): Diccionario de piezas requeridas y sus cantidades.
+        piezas_requeridas (dict[str, int]): Diccionario de nombre de piezas requeridas y sus cantidades.
         sede_origen (Sede): Sede desde donde se envían las piezas.
         sede_destino (Sede): Sede a la que se envían las piezas.
         tiempo_estimado_llegada (float): Tiempo estimado para que la pieza llegue a la sede destino (en horas).
         costo_transporte (float): Costo del traslado basado en distancia
     """
-    piezas_requeridas: dict[Pieza, int]
+    piezas_requeridas: dict[str, int]
     nombre_sede_origen: str
     nombre_sede_destino: str
     tiempo_estimado_llegada: float
@@ -34,4 +34,4 @@ class Pedido:
         # Validacion de cantidades
         for pieza, cantidad in self.piezas_requeridas.items():
             if cantidad <= 0:
-                raise ValueError(f"La cantidad de la pieza '{pieza.caracteristicas.descripcion}' debe ser mayor que cero.")
+                raise ValueError(f"La cantidad de la pieza '{pieza}' debe ser mayor que cero.")
