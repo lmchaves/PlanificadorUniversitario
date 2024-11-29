@@ -10,13 +10,13 @@ class Sede:
         nombre (str): Nombre de la sede.
         ubicacion_latitude (float): Latitud de la ubicación de la sede.
         ubicacion_longitude (float): Longitud de la ubicación de la sede.
-        inventario (dict[Pieza, int]): Diccionario que mapea el objeto pieza y su cantidad.
+        inventario (dict[Pieza, int]): Diccionario que mapea el nombre de la pieza pieza 
+        (única fuente de verdad) su cantidad y el costo unitario.
     """
     nombre: str
     ubicacion_latitude: float
     ubicacion_longitude: float
-    inventario: dict[Pieza, int]
-    # inventario (dict[str, tuple[int, float]]):
+    inventario: dict[str, tuple[int, float]]
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
