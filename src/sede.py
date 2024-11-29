@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from pieza import Pieza
 
 @dataclass()
 class Sede:
