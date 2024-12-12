@@ -21,7 +21,7 @@ class Sede:
         if not isinstance(self.inventario, dict):
             raise ValueError("El inventario debe ser un diccionario.")
 
-        # Validación de la ubicación: las coordenadas deben estar en [-90, 90] para la latitud y [-180, 180] para la longitud.
+        # Validación de la ubicación: las coordenadas deben estar en [-90, 90] para la latitud y [-180, 180] para la longitud
         if self.ubicacion_latitude < -90 or self.ubicacion_latitude > 90:
             raise ValueError("La latitud debe estar en el rango [-90, 90].")
         if self.ubicacion_longitude < -180 or self.ubicacion_longitude > 180:
