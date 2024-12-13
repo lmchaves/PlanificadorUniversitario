@@ -17,9 +17,9 @@ La clase **Pedido** es responsable de gestionar las solicitudes de piezas para r
 
 ## Ejecución
 Para instalar las dependencias del proyecto, ejecuta:
-
-```bash
 make install
+
+Y ejecuta make help para ver todas las opciones.
 
 ## Documentación adicional
 - [Historias de usuario](./docs/user-stories.md)
