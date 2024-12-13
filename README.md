@@ -20,4 +20,7 @@ La clase **Pedido** es responsable de gestionar las solicitudes de piezas para r
 - [Historias de usuario](./docs/user-stories.md)
 - [Viajes de usuario](./docs/user-journeys.md)
 - [Milestones](./docs/milestones.md)
+- [Gestor Dependecias](./docs/gestor_dependencias.md)
+- [Gestor Tareas](./docs/gestor_tareas.md) 
+
 
