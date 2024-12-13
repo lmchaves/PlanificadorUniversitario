@@ -13,7 +13,7 @@ Para ello, disponemos de los datos de costos de transporte y tiempos estimados d
 La clase **Sede** representa cada una de las sedes del taller, que pueden estar ubicadas en diferentes ciudades. Esta clase se encarga de gestionar la información relacionada con las sedes, como su ubicación, inventario de piezas disponibles y el transporte entre sedes. 
 
 ### Pedido.py
-La clase **Pedido** es responsable de gestionar las solicitudes de piezas para reparaciones. Cada pedido incluye detalles sobre la pieza solicitada, la urgencia de la reparación y la sede en la que se realiza la solicitud. 
+La clase **Pedido** es responsable de gestionar las solicitudes de piezas para reparaciones. Cada pedido incluye detalles sobre la pieza solicitada, la urgencia de la reparación y la sede en la que se realiza la solicitud.
 
 
 ## Documentación adicional
