@@ -9,7 +9,6 @@ Para seleccionar el gestor de dependencias más adecuado para este proyecto, se 
 4. **Simplicidad de uso:** Gestores fáciles de instalar, configurar y usar, incluso para desarrolladores menos experimentados.
 
 
-
 ## Poetry
 
 Utiliza el estándar pyproject.toml (PEP 621), pero tiene una estructura personalizada **[tool.poetry]** que no es 100% compatible con PEP 621.

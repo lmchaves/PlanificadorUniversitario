@@ -12,7 +12,7 @@ Para elegir el gestor de tareas más adecuado, se han considerado los siguientes
 
 
 
-## Invoke
+
 
 Es basada en Python (inspirado en ruby Rake), por lo que se pueden escribir las tareas utilizando Python, proporcionando una mayor integración en el código del proyecto.
 Permite ejecutar comandos de shell y definir/organizar funciones de tareas desde un archivo tasks.py. 
