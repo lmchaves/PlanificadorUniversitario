@@ -1,5 +1,17 @@
 # Gestor de tareas
 
+## Criterios de evaluación
+Para elegir el gestor de tareas más adecuado, se han considerado los siguientes criterios:
+
+1. **Facilidad de uso y configuración:** Herramientas sencillas de instalar y configurar, con una curva de aprendizaje accesible.
+2. **Compatibilidad con el lenguaje del proyecto:** Preferencia por herramientas integradas nativamente con Python o independientes del lenguaje.
+3. **Capacidades específicas:** Funcionalidades como ejecución remota, definición de tareas complejas o soporte para múltiples entornos.
+4. **Comunidad y documentación:** Recursos disponibles para resolver problemas y aprender a utilizar la herramienta.
+5. **Escalabilidad y aplicabilidad a largo plazo:** Adecuación para proyectos de diferentes tamaños y lenguajes, con posibilidad de expansión futura.
+6. **Complejidad añadida:** Se penalizan herramientas que introducen más complejidad de la necesaria para el proyecto.
+
+
+
 ## Invoke
 
 Es basada en Python (inspirado en ruby Rake), por lo que se pueden escribir las tareas utilizando Python, proporcionando una mayor integración en el código del proyecto.
