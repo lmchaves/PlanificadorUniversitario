@@ -1,5 +1,15 @@
 # Gestor de dependencias
 
+## Criterios de evaluación
+Para seleccionar el gestor de dependencias más adecuado para este proyecto, se han considerado los siguientes criterios:
+
+1. **Cumplimiento de estándares:** Preferencia por gestores que sigan el estándar PEP 621, garantizando mejores prácticas y compatibilidad futura.
+2. **Rendimiento:** Gestores rápidos y ligeros que no ralenticen el flujo de trabajo.
+3. **Documentación y comunidad:** Herramientas con una comunidad activa y buena documentación para facilitar la resolución de problemas.
+4. **Simplicidad de uso:** Gestores fáciles de instalar, configurar y usar, incluso para desarrolladores menos experimentados.
+
+
+
 ## Poetry
 
 Utiliza el estándar pyproject.toml (PEP 621), pero tiene una estructura personalizada **[tool.poetry]** que no es 100% compatible con PEP 621.
