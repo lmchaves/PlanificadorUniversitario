@@ -8,15 +8,9 @@ install_pdm:
 				pip install --user pdm; \
 		fi
 
-# Inicializar el proyecto si no tiene pyproject.toml
-init_project:
-		if [ ! -f pyproject.toml ]; then \
-				echo "pyproject.toml no encontrado. Inicializando proyecto..."; \
-				$(PDM_PATH) init; \
-		fi
 
 # Instalar dependencias, asegurando que el proyecto esté inicializado
-install: install_pdm init_project
+install: install_pdm 
 		$(PDM_PATH) install
 
 # Ejecutar pruebas con pytest
