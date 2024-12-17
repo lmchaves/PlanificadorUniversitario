@@ -17,7 +17,7 @@ La clase **Pedido** es responsable de gestionar las solicitudes de piezas para r
 
 ## Comprobación
 Para ver si la sintaxis es correcta ejcuta:
-make check check
+make check 
 
 Y ejecuta make help para ver todas las opciones.
 
