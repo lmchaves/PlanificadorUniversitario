@@ -15,7 +15,7 @@ Permite ejecutar comandos de shell y definir/organizar funciones de tareas desde
 
 ## Paramiko
 
-Paramiko es una librería Python que proporciona una implementación del protocolo SSH. Permite la ejecución remota de comandos en sistemas a través de SSH y la transferencia se gura de archivos. Su uso esta orientado en aplicaciones que requieren interacciones seguras entre máquinas. Pero, al estar diseñado principalmente para la ejecución de tareas en entornos remotos, agrega una complejidad adicional innecesaria
+Paramiko es una librería Python que proporciona una implementación del protocolo SSH. Permite la ejecución remota de comandos en sistemas a través de SSH y la transferencia segura de archivos. Su uso esta orientado en aplicaciones que requieren interacciones seguras entre máquinas. Pero, al estar diseñado principalmente para la ejecución de tareas en entornos remotos, agrega una complejidad adicional innecesaria
 
 ## Fabric
 
