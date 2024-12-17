@@ -4,8 +4,11 @@
 Para seleccionar el gestor de dependencias más adecuado para este proyecto, se han considerado los siguientes criterios:
 
 1. **Cumplimiento de estándares:** Preferencia por gestores que sigan el estándar PEP 621, garantizando mejores prácticas y compatibilidad futura.
-2. **Rendimiento:** Gestores rápidos y ligeros que no ralenticen el flujo de trabajo.
-3. **Documentación y comunidad:** Herramientas con una comunidad activa y buena documentación para facilitar la resolución de problemas.
+2. **Documentación y comunidad:** Herramientas con una comunidad activa y buena documentación para facilitar la resolución de problemas. Será medido:
+    -   Guías oficiales completas y claras.
+    -   Recursos como tutoriales, videos, y foros
+    -   Frecuencia y utilidad de las actualizaciones publicadas por la comunidad.
+3. **Gestores activos:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas.
 4. **Simplicidad de uso:** Gestores fáciles de instalar, configurar y usar, incluso para desarrolladores menos experimentados.
 
 
@@ -38,7 +41,7 @@ Tiene una buena documentación pero con una comunidad más pequeña que la de Po
 
 ## Uv (Unified Python packaging)
 
-Es un gestor muy moderno (empezó en agosto de este año), sin embargo en muchos foros de reddit recominedan migrar de gestores como poetry y hatch a uv.
+Es un gestor muy moderno (empezó en agosto de este año), sin embargo en muchos foros de Reddit recominedan migrar de gestores como poetry y hatch a uv.
 Un punto negativo es que no hay mucha documentación, debido al rápido ritmo de desarrollo de uv, por lo que si te surgen problemas, debes abrir un issue 
 (se puede ver como teinen mas de 1000 abiertos de hace minutos u horas, respondend bastante rápido).
 
