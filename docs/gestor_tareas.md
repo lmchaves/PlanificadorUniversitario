@@ -3,9 +3,9 @@
 ## Criterios de evaluación
 Para elegir el gestor de tareas más adecuado, se han considerado los siguientes criterios:
 
-1. **Facilidad de uso y configuración:** Herramientas sencillas de instalar y configurar, con una curva de aprendizaje accesible.
+1. **Facilidad de uso y configuración:** Herramientas sencillas de instalar y configurar, con una curva de aprendizaje accesible (evaluadas en base a la cantidad de pasos necesarios para comprender la herramienta y la claridad de la documentación).
 2. **Comunidad y documentación:** Recursos disponibles para resolver problemas y aprender a utilizar la herramienta.
-3. **Complejidad añadida:** Se penalizan herramientas que introducen más complejidad de la necesaria para el proyecto.
+3. **Complejidad añadida:** Se penalizan herramientas que introducen más complejidad de la necesaria para el proyecto, como dependencias adicionales o sintaxis excesivamente compleja.
 
 
 ## Invoke
