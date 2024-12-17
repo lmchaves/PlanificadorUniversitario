@@ -9,7 +9,6 @@ Para seleccionar el gestor de dependencias más adecuado para este proyecto, se 
     -   Recursos como tutoriales, videos, y foros
     -   Frecuencia y utilidad de las actualizaciones publicadas por la comunidad.
 3. **Gestores activos:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas.
-4. **Simplicidad de uso:** Gestores fáciles de instalar, configurar y usar, incluso para desarrolladores menos experimentados.
 
 
 ## Poetry
