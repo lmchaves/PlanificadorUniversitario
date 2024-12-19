@@ -4,8 +4,7 @@
 Para elegir el gestor de tareas más adecuado, se han considerado los siguientes criterios:
 
 1. **Facilidad de uso y configuración:** Herramientas sencillas de instalar y configurar, con una curva de aprendizaje accesible (evaluadas en base a la cantidad de pasos necesarios para comprender la herramienta y la claridad de la documentación).
-2. **Comunidad y documentación:** Recursos disponibles para resolver problemas y aprender a utilizar la herramienta.
-3. **Complejidad añadida:** Se penalizan herramientas que introducen más complejidad de la necesaria para el proyecto, como dependencias adicionales o sintaxis excesivamente compleja.
+2. **Complejidad añadida:** Se penalizan herramientas que introducen más complejidad de la necesaria para el proyecto, como dependencias adicionales o sintaxis excesivamente compleja.
 
 
 ## Invoke
@@ -13,22 +12,13 @@ Para elegir el gestor de tareas más adecuado, se han considerado los siguientes
 Es basada en Python (inspirado en ruby Rake), por lo que se pueden escribir las tareas utilizando Python, proporcionando una mayor integración en el código del proyecto.
 Permite ejecutar comandos de shell y definir/organizar funciones de tareas desde un archivo tasks.py. 
 
-## Paramiko
+## Paver
 
-Paramiko es una librería Python que proporciona una implementación del protocolo SSH. Permite la ejecución remota de comandos en sistemas a través de SSH y la transferencia segura de archivos. Su uso esta orientado en aplicaciones que requieren interacciones seguras entre máquinas. Pero, al estar diseñado principalmente para la ejecución de tareas en entornos remotos, agrega una complejidad adicional innecesaria
-
-## Fabric
-
-Fabric (basada en Paramiko) es una herramienta basada en Python para ejecutar comandos de shell de manera remota a través de SSH. Permite automatizar tareas en servidores y despliegues, extendiendo las funcionalidades de Invoke y Paramiko. Es una muy buena opción para gestionar tareas distribuidas en entornos remotos.Sin embargo, al igual que Paramiko, tiene una complejidad adicional innecesaria.
-
+Paver es una herramienta basada en python que sigue las líneas de Make y Rake. Incluyendo herramientas especifícas para proyectos de Python (como soporte para paquetes y entornos). Sin embargo, tiene una comunidad más pequeña en comparación con herramientas como Make, lo que puede dificultar la resolución de problemas.
 
 ## Make
 
 Make es una herramienta de automatización de tareas que no está limitada a un solo lenguaje de programación, por lo que puede ser utilizada en proyectos escritos en cualquier lenguaje, con una comunidad activa y una documentación extensa (muchos recursos). Solo es necesario crear un archivo específico (Makefile) para definir las tareas a ejecutar.
-
-## Rake
-
-Rake está orientado principalmente a proyectos escritos en Ruby, lo que limita su utilidad para proyectos en Python y otros lenguajes. Aunque tiene una buena integración con Ruby, su comunidad y documentación son más pequeñas en comparación con Make, que tiene un soporte más amplio y recursos más accesibles.   
 
  
 ## Just 
