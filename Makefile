@@ -17,9 +17,10 @@ install: install_pdm
 test:
 		$(PDM_PATH) run pytest
 
-# Ejecutar flake8 para revisar el código
+# Ejecutar pylint para revisar la sintaxis y estilo del código
 check:
-		$(PDM_PATH) run flake8 src/
+		$(PDM_PATH) run pylint src/ || exit 1
+		@echo "La comprobación de sintaxis ha finalizado sin errores."
 
 # Limpiar el entorno virtual
 clean:
