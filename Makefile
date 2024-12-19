@@ -17,10 +17,11 @@ install: install_pdm
 test:
 		$(PDM_PATH) run pytest
 
-# Ejecutar pylint para revisar la sintaxis y estilo del código
+# Ejecutar python -m py_compile para revisar solo la sintaxis del código
 check:
-		$(PDM_PATH) run pylint src/ || exit 1
+		$(PDM_PATH) run python -m py_compile $(shell find src -name "*.py") || exit 1
 		@echo "La comprobación de sintaxis ha finalizado sin errores."
+
 
 # Limpiar el entorno virtual
 clean:

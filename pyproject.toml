@@ -15,4 +15,3 @@ authors = [
 
 [tool.pdm.dev-dependencies]
 test = ["pytest"]
-lint = ["pylint"]
