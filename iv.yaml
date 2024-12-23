@@ -5,5 +5,4 @@ automatizar:
   fichero: Makefile
   orden: make check
 
-test:
-  fichero: tests/test_pedidos.py
+test: tests/test_pedidos.py
