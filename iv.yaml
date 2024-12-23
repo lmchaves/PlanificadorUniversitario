@@ -4,3 +4,6 @@ entidad: src/sede.py
 automatizar:
   fichero: Makefile
   orden: make check
+
+test:
+  fichero: tests/test_pedidos.py
