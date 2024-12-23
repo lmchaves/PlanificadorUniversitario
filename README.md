@@ -15,9 +15,12 @@ La clase **Sede** representa cada una de las sedes del taller, que pueden estar 
 ### Pedido.py
 La clase **Pedido** es responsable de gestionar las solicitudes de piezas para reparaciones. Cada pedido incluye detalles sobre la pieza solicitada, la urgencia de la reparación y la sede en la que se realiza la solicitud.
 
-## Comprobación
+## Comprobación y tests
 Para ver si la sintaxis es correcta ejcuta:
-make check 
+make check
+
+Para poder realizar los test:
+mkae test
 
 Y ejecuta make help para ver todas las opciones.
 
