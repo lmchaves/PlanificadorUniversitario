@@ -20,7 +20,7 @@ Para ver si la sintaxis es correcta ejcuta:
 make check
 
 Para poder realizar los test:
-mkae test
+make check test
 
 Para poder realizar los test:
 make check test
