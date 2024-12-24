@@ -49,18 +49,15 @@ def realizar_pedido(sede_origen, sede_destino, piezas_requeridas):
     Returns:
         Pedido: Objeto representando el pedido realizado.
     """
-    # Calcular la distancia entre las sedes
     distancia = sede_origen.calcular_distancia(sede_destino)
     
-    # Calcular el costo total del transporte
-    costo_transporte = distancia * 0.5  # Ejemplo de costo por kilómetro
+    costo_transporte = distancia * 0.5  
     
-    # Crear el objeto Pedido
     pedido = Pedido(
         piezas_requeridas=piezas_requeridas,
         nombre_sede_origen=sede_origen.nombre,
         nombre_sede_destino=sede_destino.nombre,
-        tiempo_estimado_llegada=distancia / 80,  # Suponiendo velocidad promedio de 80 km/h
+        tiempo_estimado_llegada=distancia / 80,  
         costo_transporte=costo_transporte
     )
     return pedido
@@ -74,10 +71,9 @@ def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
             if pieza in sede.inventario and sede.inventario[pieza][0] >= cantidad_requerida:
                 distancia = sede_actual.calcular_distancia( sede)
                 costo_pieza = sede.inventario[pieza][1] * cantidad_requerida
-                costo_transporte = distancia * 0.5  # Ejemplo de costo de transporte por km
+                costo_transporte = distancia * 0.5  
                 opciones.append((sede, costo_pieza + costo_transporte, distancia))
         
-        # Seleccionar la opción con menor costo total
         if opciones:
             sede_optima = min(opciones, key=lambda x: x[1])
             pedidos.append({

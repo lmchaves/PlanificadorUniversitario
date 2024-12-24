@@ -24,13 +24,11 @@ class Sede:
         if not isinstance(self.inventario, dict):
             raise ValueError("El inventario debe ser un diccionario.")
 
-        # Validación de la ubicación: las coordenadas deben estar en [-90, 90] para la latitud y [-180, 180] para la longitud
         if self.ubicacion_latitude < -90 or self.ubicacion_latitude > 90:
             raise ValueError("La latitud debe estar en el rango [-90, 90].")
         if self.ubicacion_longitude < -180 or self.ubicacion_longitude > 180:
             raise ValueError("La longitud debe estar en el rango [-180, 180].")
 
-        # Validación del inventario: las cantidades deben ser no negativas.
         for pieza, (cantidad, _) in self.inventario.items():
             if cantidad < 0:
                 raise ValueError("Las cantidades de la pieza " + pieza + " en el inventario no pueden ser negativas.")   
@@ -72,7 +70,6 @@ class Sede:
                 nueva_cantidad = cantidad_existente + cantidad
                 self.inventario[pieza] = (nueva_cantidad, costo_unitario)
             else:
-                # Si la pieza no existe, se necesita un costo unitario predeterminado. Puedes ajustar esto según tus necesidades.
                 costo_unitario = 0.0  
                 self.inventario[pieza] = (cantidad, costo_unitario)
     
