@@ -1,10 +1,8 @@
-# Herramientas para Testing
-
 ## Criterios de evaluación
 
-Para seleccionar la herramienta para tests, se han considerado los siguientes criterios:
+Se han considerado los siguientes criterios, para las diferentes herramientas que llevan a cabo las diferentes funcionalidades para los tests:
 
-1. **Herramientas activas:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas.
+1. **Herramientas activas:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas. Para ello se consulta en los repositorios oficiales de las herramientas, como [Pytest](https://github.com/pytest-dev/pytest), [Nose2](https://github.com/nose-devs/nose2), y [Testify](https://github.com/Yelp/Testify), donde se puede verificar la frecuencia de commits y actualizaciones recientes.
 
 2. **Biblioteca de aserciones**: La herramienta debe incluir una biblioteca que permita verificar condiciones esperadas de los tests mediante métodos simples y legibles, proporcionando mensajes detallados en caso de fallo para facilitar la depuración.
 
@@ -50,7 +48,7 @@ Nose2 no tiene su propia biblioteca de aserciones, pero es compatible con las bi
 
 Testify incluye su propia biblioteca de aserciones, que ofrece métodos como `assert_equal(actual, expected)` y `assert_raises(exception, func)`. Estas aserciones son expresivas y útiles para depurar, con mensajes claros en caso de fallos.
 
-### [Hamcrest](https://github.com/hamcrest/PyHamcrest)
+### [PyHamcrest](https://github.com/hamcrest/PyHamcrest)
 
 Una biblioteca de aserciones más expresiva que permite escribir condiciones como `assert_that(actual, equal_to(expected))`.
 
