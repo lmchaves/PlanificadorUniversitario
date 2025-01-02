@@ -5,9 +5,7 @@ Se han considerado los siguientes criterios, para las diferentes herramientas qu
 1. **Herramientas activas:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas. Para ello se consulta en los repositorios oficiales de las herramientas, como [Pytest](https://github.com/pytest-dev/pytest), [Nose2](https://github.com/nose-devs/nose2), y [Testify](https://github.com/Yelp/Testify), donde se puede verificar la frecuencia de commits y actualizaciones recientes.
 
 2. **Biblioteca de aserciones**: La herramienta debe incluir una biblioteca que permita verificar condiciones esperadas de los tests mediante métodos simples y legibles, proporcionando mensajes detallados en caso de fallo para facilitar la depuración.
-
-3. **Facilidad de ejecución desde CLI:** Capacidad para ejecutar pruebas fácilmente desde la línea de comandos, permitiendo ejecutar todos los tests o casos específicos.
-
+3. 
 ---
 
 ## Test Runners
@@ -27,6 +25,11 @@ Nose2 es la evolución de Nose, una herramienta de testing para Python, diseñad
 ### [Testify](https://github.com/Yelp/Testify)
 
 Testify es un test runner robusto, diseñado como una alternativa a Unittest. Proporciona una estructura clara para organizar tests y ofrece funcionalidades avanzadas como hooks para configurar y limpiar entornos. Aunque es menos popular que Pytest, es utilizado en proyectos que requieren flexibilidad adicional en sus pruebas.
+
+
+## Conclusión
+
+Según los criterios establecidos, Pytest es la opción más adecuada debido a su mantenimiento activo, facilidad de uso y una biblioteca de aserciones integrada que simplifica la escritura y comprensión de los tests. Unittest sigue siendo una herramienta estándar confiable, aunque con una curva de aprendizaje más pronunciada. Nose2 y Testify ofrecen flexibilidad y extensibilidad, pero su menor nivel de actualización y soporte los hacen menos recomendables.
 
 ---
 
@@ -50,7 +53,15 @@ Testify incluye su propia biblioteca de aserciones, que ofrece métodos como `as
 
 ### [PyHamcrest](https://github.com/hamcrest/PyHamcrest)
 
-Una biblioteca de aserciones más expresiva que permite escribir condiciones como `assert_that(actual, equal_to(expected))`.
+Una biblioteca de aserciones más expresiva que permite escribir condiciones como `assert_that(actual, equal_to(expected))`. Se encuentra activamente mantenida, con actualizaciones periódicas en su repositorio oficial.
+
+### [Ensure](https://pypi.org/project/ensure/)
+
+Es una biblioreca de aserciones que proporciona verificaciones claras y específicas para validar condiciones esperadas, con un enfoque en la legibilidad y simplicidad. Soporta expresiones como `ensure.equal(actual, expected)` y se centra en una sintaxis intuitiva. Su mantenimiento activo y desarrollo reciente la hacen una opción confiable para integrarse en proyectos actuales.
+
+## Conclusión
+
+Pytest destaca por su simplicidad, mensajes automáticos detallados y mantenimiento activo. Ensure tiene una sintaxis explícita, mientras que Unittest permanece sólido para pruebas formales. PyHamcrest y Testify son útiles para expresiones avanzadas, pero menos intuitivos. Nose2 resulta menos práctico por su dependencia de bibliotecas externas.
 
 ---
 
@@ -74,6 +85,4 @@ Una biblioteca de aserciones más expresiva que permite escribir condiciones com
 
 ---
 
-## Conclusión
 
-Según los criterios establecidos, Pytest es la opción más adecuada. Aunque Unittest es una herramienta estándar y ampliamente usada, Pytest es preferido debido a su mantenimiento activo, amplia comunidad y capacidad para simplificar la escritura y comprensión de los tests. Nose2 y Testify, aunque versátiles, cuentan con menor soporte y comunidad en comparación.
