@@ -4,7 +4,7 @@ Se han considerado los siguientes criterios, para las diferentes herramientas qu
 
 1. **Herramientas activas:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas. Para ello se consulta en los repositorios oficiales de las herramientas, como [Pytest](https://github.com/pytest-dev/pytest), [Nose2](https://github.com/nose-devs/nose2), y [Testify](https://github.com/Yelp/Testify), donde se puede verificar la frecuencia de commits y actualizaciones recientes.
 
-2. **Cantidad de métodos de aserción disponibles:** Se valoran bibliotecas que ofrecen una amplia gama de métodos de verificación (por ejemplo, assertEqual, assertTrue, assertRaises, etc.), permitiendo cubrir diferentes casos de tests y simplificando la validación de condiciones complejas en las pruebas.
+2. Se valoran bibliotecas que ofrecen diversos métodos de verificación (por ejemplo, assertEqual, assertTrue, assertRaises, etc.), permitiendo cubrir diferentes casos de tests y simplificando la validación de condiciones complejas en las pruebas.
    
 3. **Mensajes detallados de error:** Es importante que proporcionen mensajes detallados y claros en caso de fallos, facilitando la identificación y solución de problemas durante el desarrollo de los tests.
 
