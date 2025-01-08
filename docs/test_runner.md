@@ -4,9 +4,7 @@ Se han considerado los siguientes criterios, para las diferentes herramientas qu
 
 1. **Herramientas activas:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas. Para ello se consulta en los repositorios oficiales de las herramientas, como [Pytest](https://github.com/pytest-dev/pytest), [Nose2](https://github.com/nose-devs/nose2), y [Testify](https://github.com/Yelp/Testify), donde se puede verificar la frecuencia de commits y actualizaciones recientes.
 
-2. Se valoran bibliotecas que ofrecen diversos métodos de verificación (por ejemplo, assertEqual, assertTrue, assertRaises, etc.), permitiendo cubrir diferentes casos de tests y simplificando la validación de condiciones complejas en las pruebas.
-   
-3. **Mensajes detallados de error:** Es importante que proporcionen mensajes detallados y claros en caso de fallos, facilitando la identificación y solución de problemas durante el desarrollo de los tests.
+2. **Complejidad añadida:** Se penalizan herramientas que introduzcan complejidad innecesaria para el proyecto, ya sea por depender de bibliotecas adicionales o por requerir una sintaxis excesivamente compleja.
 
 ---
 
@@ -31,7 +29,7 @@ Testify es un test runner robusto, diseñado como una alternativa a Unittest. Pr
 
 ## Conclusión
 
-Según los criterios establecidos, Pytest es la opción más adecuada debido a su mantenimiento activo, y una biblioteca de aserciones integrada que simplifica la escritura y comprensión de los tests. Unittest sigue siendo una herramienta estándar confiable así que tambien se puede usar en algunas ocasiones (se puede combinar con pytest). Nose2 y Testify ofrecen flexibilidad, pero su menor nivel de actualización y soporte los hacen menos recomendables.
+Según los criterios establecidos, Pytest es la opción más adecuada debido a su mantenimiento activo, y una biblioteca de aserciones integrada que simplifica la escritura y comprensión de los tests. Unittest sigue siendo una herramienta estándar confiable así que tambien se puede usar en algunas ocasiones (se puede combinar con pytest). Nose2 y Testify  introducen un nivel de complejidad innecesario debido a su menor comunidad de soporte (y actualizaciones) y su dependencia de configuraciones adicionales.
 
 ---
 
@@ -63,7 +61,7 @@ Es una biblioreca de aserciones que proporciona verificaciones claras y específ
 
 ## Conclusión
 
-Pytest destaca por sus mensajes automáticos detallados y mantenimiento activo. Ensure tiene una sintaxis explícita, mientras que Unittest permanece sólido para pruebas formales y puede combinarse con Pytest para aprovechar lo mejor de ambos. PyHamcrest y Testify son útiles para expresiones avanzadas, pero menos intuitivos. Nose2 resulta menos práctico por su dependencia de bibliotecas externas.
+Pytest destaca por sus mensajes automáticos detallados y mantenimiento activo. Ensure tiene una sintaxis explícita, mientras que Unittest permanece sólido para pruebas formales y puede combinarse con Pytest para aprovechar lo mejor de ambos. PyHamcrest y Testify son útiles para expresiones avanzadas, pero menos intuitivos (pueden añadir complejidad innecesaria, ya que su sintaxis más elaborada). Nose2 resulta menos práctico por su dependencia de bibliotecas externas.
 
 ---
 
@@ -87,7 +85,7 @@ Pytest destaca por sus mensajes automáticos detallados y mantenimiento activo. 
 
 ## Conclusión
 
-Las herramientas CLI deben facilitar la identificación de errores proporcionando mensajes detallados en caso de fallos. En este sentido, Pytest sobresale al generar mensajes claros y fáciles de interpretar que ayudan a solucionar problemas rápidamente. Unittest y Nose2 también ofrecen mensajes útiles, aunque requieren comandos más específicos. Testify, aunque funcional, es menos intuitivo en comparación con las opciones estándar.
+Pytest sobresale al generar mensajes claros y fáciles de interpretar que ayudan a solucionar problemas rápidamente. Unittest y Nose2 también ofrecen mensajes útiles, aunque requieren comandos más específicos. Testify, aunque funcional, es menos intuitivo en comparación con las opciones estándar.
 
 ---
 
