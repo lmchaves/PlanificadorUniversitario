@@ -32,12 +32,11 @@ class Pedido:
             raise ValueError("El costo del transporte debe ser mayor que cero.")
         if not self.piezas_requeridas:
             raise ValueError("El pedido debe tener al menos una pieza requerida.")
-        # Validacion de cantidades
         for pieza, cantidad in self.piezas_requeridas.items():
             if cantidad <= 0:
                 raise ValueError(f"La cantidad de la pieza '{pieza}' debe ser mayor que cero.")
             
-def realizar_pedido(sede_origen, sede_destino, piezas_requeridas, distancia):
+def realizar_pedido(sede_origen, sede_destino, piezas_requeridas,distancia):
     """
     Realiza un pedido entre dos sedes.
 
@@ -50,41 +49,45 @@ def realizar_pedido(sede_origen, sede_destino, piezas_requeridas, distancia):
     Returns:
         Pedido: Objeto representando el pedido realizado.
     """
-    coste_km = 0.5
-    velocidad= 80  
-    distancia = sede_origen.calcular_distancia(sede_destino)
-    
-    costo_transporte = distancia * coste_km
+    velcidad= 80  
+    costo_transporte=sede_origen.calcular_costo_transporte(sede_destino)
     
     pedido = Pedido(
         piezas_requeridas=piezas_requeridas,
         nombre_sede_origen=sede_origen.nombre,
         nombre_sede_destino=sede_destino.nombre,
-        tiempo_estimado_llegada=distancia / velocidad,  
+        tiempo_estimado_llegada=distancia / velcidad,  
         costo_transporte=costo_transporte
     )
     return pedido
 
-            
+        
+
 def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
     pedidos = []
-    for pieza, cantidad_requerida in piezas_requeridas.items():
-        opciones = []
-        for sede in sedes:
-            if pieza in sede.inventario and sede.inventario[pieza][0] >= cantidad_requerida:
-                distancia = sede_actual.calcular_distancia( sede)
-                costo_pieza = sede.inventario[pieza][1] * cantidad_requerida
-                costo_transporte = distancia * 0.5  
-                opciones.append((sede, costo_pieza + costo_transporte, distancia))
-        
+
+    for pieza, cantidad in piezas_requeridas.items():
+        opciones = list(
+            map(
+                lambda sede: {
+                    "sede": sede.nombre,
+                    "costo_total": sede.inventario[pieza][1] * cantidad + sede_actual.calcular_costo_transporte(sede),
+                    "distancia": sede_actual.calcular_distancia(sede),
+                },
+                filter(lambda sede: sede.tiene_pieza_disponible(pieza, cantidad), sedes),
+            )
+        )
+
         if opciones:
-            sede_optima = min(opciones, key=lambda x: x[1])
+            mejor_opcion = min(opciones, key=lambda x: x["costo_total"])
             pedidos.append({
                 "pieza": pieza,
-                "cantidad": cantidad_requerida,
-                "sede": sede_optima[0].nombre,
-                "costo_total": sede_optima[1],
-                "distancia": sede_optima[2]
+                "cantidad": cantidad,
+                "sede": mejor_opcion["sede"],
+                "costo_total": mejor_opcion["costo_total"],
+                "distancia": mejor_opcion["distancia"],
             })
+
     return pedidos
+
 
