@@ -37,7 +37,7 @@ class Pedido:
             if cantidad <= 0:
                 raise ValueError(f"La cantidad de la pieza '{pieza}' debe ser mayor que cero.")
             
-def realizar_pedido(sede_origen, sede_destino, piezas_requeridas):
+def realizar_pedido(sede_origen, sede_destino, piezas_requeridas, distancia):
     """
     Realiza un pedido entre dos sedes.
 
@@ -45,19 +45,22 @@ def realizar_pedido(sede_origen, sede_destino, piezas_requeridas):
         sede_origen (Sede): Sede desde donde se envían las piezas.
         sede_destino (Sede): Sede a la que se envían las piezas.
         piezas_requeridas (dict[str, int]): Diccionario con las piezas requeridas y sus cantidades.
+        distancia: la distancia entre una sede origen y destino
 
     Returns:
         Pedido: Objeto representando el pedido realizado.
     """
+    coste_km = 0.5
+    velocidad= 80  
     distancia = sede_origen.calcular_distancia(sede_destino)
     
-    costo_transporte = distancia * 0.5  
+    costo_transporte = distancia * coste_km
     
     pedido = Pedido(
         piezas_requeridas=piezas_requeridas,
         nombre_sede_origen=sede_origen.nombre,
         nombre_sede_destino=sede_destino.nombre,
-        tiempo_estimado_llegada=distancia / 80,  
+        tiempo_estimado_llegada=distancia / velocidad,  
         costo_transporte=costo_transporte
     )
     return pedido
