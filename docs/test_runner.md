@@ -4,7 +4,7 @@ Se han considerado los siguientes criterios, para las diferentes herramientas qu
 
 1. **Herramientas activas:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas. Para ello se consulta en los repositorios oficiales de las herramientas, como [Pytest](https://github.com/pytest-dev/pytest), [Nose2](https://github.com/nose-devs/nose2), y [Testify](https://github.com/Yelp/Testify), donde se puede verificar la frecuencia de commits y actualizaciones recientes.
 
-2. **Complejidad añadida:** Se penalizan herramientas que introduzcan complejidad innecesaria para el proyecto, ya sea por depender de bibliotecas adicionales o por requerir una sintaxis excesivamente compleja.
+2. **Funcionalidades integradas:** Se valoran las herramientas que incluyan funcionalidades necesarias para las pruebas, evitando dependencias adicionales. Esto reduce la necesidad de instalar complementos externos, simplificando la configuración del entorno de pruebas.
 
 ---
 
