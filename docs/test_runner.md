@@ -2,9 +2,9 @@
 
 Se han considerado los siguientes criterios, para las diferentes herramientas que llevan a cabo las diferentes funcionalidades para los tests:
 
-1. **Herramientas activas:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas. Para ello se consulta en los repositorios oficiales de las herramientas, como [Pytest](https://github.com/pytest-dev/pytest), [Nose2](https://github.com/nose-devs/nose2), y donde se puede verificar la frecuencia de commits y actualizaciones recientes.
+1. **Herramientas activas:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas. Para ello se consulta en los repositorios oficiales de las herramientas, como [Pytest](https://github.com/pytest-dev/pytest), [Nose2](https://github.com/nose-devs/nose2), donde se puede verificar la frecuencia de commits y actualizaciones recientes.
 
-2. **Funcionalidades integradas:** Se valoran las herramientas que incluyan funcionalidades necesarias para las pruebas, evitando dependencias adicionales. Esto reduce la necesidad de instalar complementos externos, simplificando la configuración del entorno de pruebas.
+2. **Funcionalidades integradas:** Se valoran las herramientas que incluyan una biblioteca de aserciones integrada y otras funcionalidades necesarias para las pruebas, evitando dependencias adicionales. Esto reduce la necesidad de instalar complementos externos, simplificando la configuración del entorno de pruebas.
 
 ---
 
@@ -23,25 +23,19 @@ Unittest es el framework de pruebas estándar incluido en Python. Ejecuta los te
 Nose2 es la evolución de Nose, una herramienta de testing para Python, diseñada para ser más moderna y compatible con los estándares actuales. Nose2 permite ejecutar pruebas de forma automatizada mediante el comando **nose2**. Compatible con las bibliotecas de aserciones estándar, como las de Unittest, y permite extender funcionalidades mediante plugins. Sin embargo, su comunidad y soporte son más limitados en comparación con Pytest.
 
 
+
+
 ## Conclusión
 
-Según los criterios establecidos, Pytest es la opción más adecuada debido a su mantenimiento activo, y una biblioteca de aserciones integrada que simplifica la escritura y comprensión de los tests. Unittest sigue siendo una herramienta estándar confiable así que tambien se puede usar en algunas ocasiones (se puede combinar con pytest). Nose2   introducen un nivel de complejidad innecesario debido a su menor comunidad de soporte (y actualizaciones) y su dependencia de configuraciones adicionales.
+Según los criterios establecidos, **Pytest** es la opción más adecuada debido a su mantenimiento activo, y sus funcionalidades integradas que simplifican la configuración y ejecución de pruebas sin requerir muchas dependencias externas. Unittest sigue siendo una herramienta estándar confiable así que tambien se puede usar en algunas ocasiones (se puede combinar con pytest). Nose2  introducen un nivel de complejidad innecesario debido a su menor comunidad de soporte (y actualizaciones) y su dependencia de configuraciones adicionales.
 
 ---
 
 ## Bibliotecas de Aserciones
 
-### [Pytest](https://github.com/pytest-dev/pytest)
-
-Pytest utiliza una biblioteca de aserciones nativa que permite escribir afirmaciones simples como `assert actual == expected`. Esta biblioteca genera automáticamente mensajes detallados en caso de fallos, lo que facilita la depuración y comprensión de errores.
-
 ### Unittest
 
 Unittest incluye una biblioteca integrada que proporciona métodos como `self.assertEqual(actual, expected)` o `self.assertTrue(condition)` para comparaciones detalladas y expresivas. Esto lo hace útil para pruebas más estructuradas y específicas.
-
-### [Nose2](https://github.com/nose-devs/nose2)
-
-Nose2 no tiene su propia biblioteca de aserciones, pero es compatible con las bibliotecas estándar de Python como las de Unittest. Esto permite escribir pruebas utilizando métodos como `self.assertEqual` o incluso el operador `assert`.
 
 ### [PyHamcrest](https://github.com/hamcrest/PyHamcrest)
 
@@ -53,7 +47,8 @@ Es una biblioreca de aserciones que proporciona verificaciones claras y específ
 
 ## Conclusión
 
-Pytest destaca por sus mensajes automáticos detallados y mantenimiento activo. Ensure tiene una sintaxis explícita, mientras que Unittest permanece sólido para pruebas formales y puede combinarse con Pytest para aprovechar lo mejor de ambos. PyHamcrest es útil para expresiones avanzadas, pero menos intuitivos (pueden añadir complejidad innecesaria, ya que su sintaxis más elaborada). Nose2 resulta menos práctico por su dependencia de bibliotecas externas.
+Unittest sigue siendo una opción sólida gracias a su biblioteca integrada y confiable. Ensure tiene una sintaxis explícita, PyHamcrest es útil para expresiones avanzadas, pero menos intuitivos (pueden añadir complejidad innecesaria, ya que su sintaxis más elaborada). 
+Por lo tanto, combinar **Unittest** con herramientas como Pytest puede ser la mejor estrategia para aprovechar lo mejor de ambas: la estructura estándar de Unittest y los mensajes automáticos mejorados de Pytest.
 
 ---
 
@@ -63,9 +58,6 @@ Pytest destaca por sus mensajes automáticos detallados y mantenimiento activo. 
 
 - Pytest se ejecuta con el comando `pytest` para correr todos los tests o `pytest ruta/test_función.py::test_nombre` para tests específicos.
 
-### Unittest
-
-- Se utiliza el comando `python -m unittest` para ejecutar todos los tests, o `python -m unittest ruta.TestClase.test_nombre` para casos concretos.
 
 ### [Nose2](https://github.com/nose-devs/nose2)
 
@@ -74,7 +66,7 @@ Pytest destaca por sus mensajes automáticos detallados y mantenimiento activo. 
 
 ## Conclusión
 
-Pytest sobresale al generar mensajes claros y fáciles de interpretar que ayudan a solucionar problemas rápidamente. Unittest y Nose2 también ofrecen mensajes útiles, aunque requieren comandos más específicos. 
+Pytest sobresale al generar mensajes claros y fáciles de interpretar que ayudan a solucionar problemas rápidamente. Nose2 también ofrecen mensajes útiles, aunque requieren comandos más específicos. 
 
 ---
 
