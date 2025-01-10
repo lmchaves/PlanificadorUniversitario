@@ -93,6 +93,37 @@ class Sede:
         distancia = R * c
 
         return distancia
+    
+    def tiene_pieza_disponible(self, pieza: str, cantidad_requerida: int) -> bool:
+        """
+        Verifica si la sede tiene una cantidad suficiente de una pieza específica.
+
+        Args:
+            pieza (str): Nombre de la pieza a verificar.
+            cantidad_requerida (int): Cantidad requerida de la pieza.
+
+        Returns:
+            bool: True si la pieza está disponible en cantidad suficiente, False en caso contrario.
+        """
+        if pieza in self.inventario:
+            cantidad_disponible, _ = self.inventario[pieza]
+            return cantidad_disponible >= cantidad_requerida
+        return False
+    
+    def calcular_costo_transporte(self, sede_destino) -> float:
+        """
+        Calcula el costo de transporte entre la sede actual y otra sede basado en la distancia.
+
+        Args:
+            sede_destino (Sede): La sede de destino a la que se enviarán las piezas.
+            coste_km (float): Costo por kilómetro de transporte. Por defecto es 0.5.
+
+        Returns:
+            float: El costo de transporte calculado.
+        """
+        coste_km=0.5
+        distancia = self.calcular_distancia(sede_destino)  
+        return distancia * coste_km
 
 
 def crear_inventario(dataframe, cantidad_fija):
@@ -112,3 +143,4 @@ def crear_inventario(dataframe, cantidad_fija):
         precio = row['Precio (€)']
         inventario[pieza] = (cantidad_fija, precio)
     return inventario
+
