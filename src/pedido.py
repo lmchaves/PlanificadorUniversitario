@@ -24,6 +24,9 @@ class Pedido:
     nombre_sede_destino: str
     tiempo_estimado_llegada: float
     costo_transporte: float
+    
+    VELOCIDAD= 80  
+
 
     def __post_init__(self):
         if self.tiempo_estimado_llegada <= 0:
@@ -36,7 +39,7 @@ class Pedido:
             if cantidad <= 0:
                 raise ValueError(f"La cantidad de la pieza '{pieza}' debe ser mayor que cero.")
             
-def realizar_pedido(sede_origen, sede_destino, piezas_requeridas,distancia):
+def realizar_pedido(sede_origen, sede_destino, piezas_requeridas,distancia, pedidos):
     """
     Realiza un pedido entre dos sedes.
 
@@ -49,17 +52,17 @@ def realizar_pedido(sede_origen, sede_destino, piezas_requeridas,distancia):
     Returns:
         Pedido: Objeto representando el pedido realizado.
     """
-    velcidad= 80  
+ 
     costo_transporte=sede_origen.calcular_costo_transporte(sede_destino)
     
     pedido = Pedido(
         piezas_requeridas=piezas_requeridas,
         nombre_sede_origen=sede_origen.nombre,
         nombre_sede_destino=sede_destino.nombre,
-        tiempo_estimado_llegada=distancia / velcidad,  
+        tiempo_estimado_llegada=distancia / Pedido.VELOCIDAD,  
         costo_transporte=costo_transporte
     )
-    return pedido
+    pedidos.append(pedido)
 
         
 
@@ -80,13 +83,13 @@ def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
 
         if opciones:
             mejor_opcion = min(opciones, key=lambda x: x["costo_total"])
-            pedidos.append({
-                "pieza": pieza,
-                "cantidad": cantidad,
-                "sede": mejor_opcion["sede"],
-                "costo_total": mejor_opcion["costo_total"],
-                "distancia": mejor_opcion["distancia"],
-            })
+            realizar_pedido(
+                sede_origen=mejor_opcion["sede"],
+                sede_destino=sede_actual,
+                piezas_requeridas={pieza: cantidad},
+                distancia=mejor_opcion["distancia"],
+                pedidos=pedidos
+            )
 
     return pedidos
 
