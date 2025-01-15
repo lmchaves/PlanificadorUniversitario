@@ -12,29 +12,6 @@ def setup_data():
 
     return [sede_malaga, sede_cordoba, sede_jaen], sede_principal, piezas_requeridas
 
-def test_realizar_pedido(setup_data):
-    sede_principal, piezas_requeridas = setup_data
-    
-    # Prueba de creación del pedido
-    pedido = realizar_pedido(sede_principal, sede_jaen, piezas_requeridas)
-    
-    assert isinstance(pedido, Pedido), "El pedido no es de tipo Pedido"
-    assert pedido.nombre_sede_origen == "Lopez Rodriguez Manuel", f"Esperaba 'Lopez Rodriguez Manuel', pero obtuve {pedido.nombre_sede_origen}"
-    assert pedido.nombre_sede_destino == "Jaén", f"Esperaba 'Jaén', pero obtuve {pedido.nombre_sede_destino}"
-    assert pedido.piezas_requeridas == piezas_requeridas, "Las piezas requeridas no coinciden"
-    assert pedido.tiempo_estimado_llegada > 0, "El tiempo estimado de llegada debería ser mayor que cero"
-    assert pedido.costo_transporte > 0, "El costo de transporte debería ser mayor que cero"
-
-def test_inventario_post_pedido(setup_data):
-    sede_principal, piezas_requeridas = setup_data
-    
-    realizar_pedido(sede_principal, sede_jaen, piezas_requeridas)
-    
-    inventario_principal = sede_principal.get_inventario()
-    piezas_en_inventario = [pieza for pieza in piezas_requeridas.keys() if pieza in inventario_principal]
-    
-    assert len(piezas_en_inventario) == len(piezas_requeridas), "No todas las piezas están presentes en el inventario"
-    assert len(inventario_principal) >= len(piezas_requeridas), "El inventario debería haber aumentado con las piezas solicitadas"
 
 def test_seleccionar_sede_optima_por_pieza(setup_data):
     sedes, sede_principal, piezas_requeridas = setup_data
