@@ -1,8 +1,6 @@
 from dataclasses import dataclass
 from math import radians, sin, cos, sqrt, atan2
 
-
-
 @dataclass()
 class Sede:
     """

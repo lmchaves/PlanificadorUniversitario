@@ -5,8 +5,6 @@ incluyendo sus estados y los detalles del pedido.
 
 from dataclasses import dataclass
 
-
-
 @dataclass(frozen=True)
 class Pedido:
     """
