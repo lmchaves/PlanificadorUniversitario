@@ -19,6 +19,9 @@ class Sede:
     ubicacion_latitude: float
     ubicacion_longitude: float
     inventario: dict[str, tuple[int, float]]
+    
+    R = 6371.0 
+
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
@@ -84,13 +87,12 @@ class Sede:
         Returns:
             float: Distancia en kilómetros.
         """
-        R = 6371.0  
 
         dlat = radians(otra_sede.ubicacion_latitude - self.ubicacion_latitude)
         dlon = radians(otra_sede.ubicacion_longitude - self.ubicacion_longitude)
         a = sin(dlat / 2) ** 2 + cos(radians(self.ubicacion_latitude)) * cos(radians(otra_sede.ubicacion_latitude)) * sin(dlon / 2) ** 2
         c = 2 * atan2(sqrt(a), sqrt(1 - a))
-        distancia = R * c
+        distancia = Sede.R * c
 
         return distancia
     
