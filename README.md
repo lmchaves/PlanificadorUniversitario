@@ -26,6 +26,12 @@ make test
 
 Y ejecuta make help para ver todas las opciones.
 
+# Imagen Docker
+
+Se ha elegido python:alpine cuya explicación esta en [Elección de imgaen](./docs/docker_images.md)
+
+Para ejecutar debemos usar: docker run -u 1001 -t -v pwd:/app/test lmchaves/OrganizarTaller
+
 ## Documentación adicional
 - [Historias de usuario](./docs/user-stories.md)
 - [Viajes de usuario](./docs/user-journeys.md)
