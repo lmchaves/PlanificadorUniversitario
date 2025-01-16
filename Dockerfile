@@ -2,7 +2,6 @@ FROM python:alpine
 
 RUN apk add --no-cache \
     make \
-    curl \
     && pip install pdm
 
 WORKDIR /app/test  
