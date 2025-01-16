@@ -3,6 +3,6 @@ entidad: src/sede.py
 
 automatizar:
   fichero: Makefile
-  orden: make check
+  orden: make 
 
 test: tests/test_pedidos.py
