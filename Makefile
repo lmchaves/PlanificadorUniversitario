@@ -1,21 +1,8 @@
-# Ruta donde se encuentra pdm instalado
-PDM_PATH = $(HOME)/.local/bin/pdm
+install:  
+		pdm install
 
-# Instalar pdm si no está disponible
-install_pdm:
-		if ! command -v $(PDM_PATH) &> /dev/null; then \
-				echo "Instalando pdm..."; \
-				pip install --user pdm; \
-		fi
-
-
-# Instalar dependencias, asegurando que el proyecto esté inicializado
-install: install_pdm 
-		$(PDM_PATH) install
-
-# Ejecutar pruebas con pytest
 test:
-		$(PDM_PATH) run pytest
+		pdm run pytest
 
 # Ejecutar python -m py_compile para revisar solo la sintaxis del código
 check:
