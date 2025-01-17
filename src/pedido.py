@@ -5,6 +5,7 @@ incluyendo sus estados y los detalles del pedido.
 
 from dataclasses import dataclass
 
+
 @dataclass(frozen=True)
 class Pedido:
     """
@@ -37,7 +38,7 @@ class Pedido:
             if cantidad <= 0:
                 raise ValueError(f"La cantidad de la pieza '{pieza}' debe ser mayor que cero.")
             
-def realizar_pedido(sede_origen, sede_destino, piezas_requeridas,distancia, pedidos):
+def realizar_pedido(sede_origen, sede_destino, piezas_requeridas,distancia,pedidos):
     """
     Realiza un pedido entre dos sedes.
 
@@ -50,7 +51,6 @@ def realizar_pedido(sede_origen, sede_destino, piezas_requeridas,distancia, pedi
     Returns:
         Pedido: Objeto representando el pedido realizado.
     """
- 
     costo_transporte=sede_origen.calcular_costo_transporte(sede_destino)
     
     pedido = Pedido(
@@ -62,6 +62,7 @@ def realizar_pedido(sede_origen, sede_destino, piezas_requeridas,distancia, pedi
     )
     pedidos.append(pedido)
 
+
         
 
 def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
@@ -71,7 +72,7 @@ def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
         opciones = list(
             map(
                 lambda sede: {
-                    "sede": sede.nombre,
+                    "sede": sede,
                     "costo_total": sede.inventario[pieza][1] * cantidad + sede_actual.calcular_costo_transporte(sede),
                     "distancia": sede_actual.calcular_distancia(sede),
                 },
@@ -82,8 +83,8 @@ def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
         if opciones:
             mejor_opcion = min(opciones, key=lambda x: x["costo_total"])
             realizar_pedido(
-                sede_origen=mejor_opcion["sede"],
-                sede_destino=sede_actual,
+                sede_origen=sede_actual,
+                sede_destino=mejor_opcion["sede"],
                 piezas_requeridas={pieza: cantidad},
                 distancia=mejor_opcion["distancia"],
                 pedidos=pedidos
