@@ -25,6 +25,7 @@ class Sede:
     inventario: dict[str, InventarioItem]
     
     RADIO_TIERRA_KM  = 6371.0 
+    VELOCIDAD= 80  
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
@@ -90,3 +91,32 @@ class Sede:
         coste_km=0.5
         distancia = self.calcular_distancia(sede_destino)  
         return distancia * coste_km
+    
+    @staticmethod
+    def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
+        pedidos = []
+
+        for pieza, cantidad in piezas_requeridas.items():
+            opciones = list(
+                map(
+                    lambda sede: {
+                        "sede": sede,
+                        "costo_total": sede.inventario[pieza][1] * cantidad + sede_actual.calcular_costo_transporte(sede),
+                        "distancia": sede_actual.calcular_distancia(sede),
+                    },
+                    filter(lambda sede: sede.tiene_pieza_disponible(pieza, cantidad), sedes),
+                )
+            )
+
+            if opciones:
+                mejor_opcion = min(opciones, key=lambda x: x["costo_total"])
+                pedidos.append({
+                    "pieza": pieza,
+                    "cantidad": cantidad,
+                    "sede_origen": mejor_opcion["sede"].nombre,
+                    "sede_destino": sede_actual.nombre,
+                    "costo_transporte": mejor_opcion["costo_total"] - sede_actual.calcular_costo_transporte(mejor_opcion["sede"]),
+                    "tiempo_estimado": mejor_opcion["distancia"] / Sede.VELOCIDAD,
+                })
+
+        return pedidos
