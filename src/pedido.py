@@ -5,6 +5,7 @@ incluyendo sus estados y los detalles del pedido.
 
 from dataclasses import dataclass
 
+
 @dataclass(frozen=True)
 class Pedido:
     """
@@ -37,32 +38,6 @@ class Pedido:
             if cantidad <= 0:
                 raise ValueError(f"La cantidad de la pieza '{pieza}' debe ser mayor que cero.")
             
-def realizar_pedido(sede_origen, sede_destino, piezas_requeridas,distancia,pedidos):
-    """
-    Realiza un pedido entre dos sedes.
-
-    Args:
-        sede_origen (Sede): Sede desde donde se envían las piezas.
-        sede_destino (Sede): Sede a la que se envían las piezas.
-        piezas_requeridas (dict[str, int]): Diccionario con las piezas requeridas y sus cantidades.
-        distancia: la distancia entre una sede origen y destino
-
-    Returns:
-        Pedido: Objeto representando el pedido realizado.
-    """
-    costo_transporte=sede_origen.calcular_costo_transporte(sede_destino)
-    
-    pedido = Pedido(
-        piezas_requeridas=piezas_requeridas,
-        nombre_sede_origen=sede_origen.nombre,
-        nombre_sede_destino=sede_destino.nombre,
-        tiempo_estimado_llegada=distancia / Pedido.VELOCIDAD,  
-        costo_transporte=costo_transporte
-    )
-    pedidos.append(pedido)
-
-
-        
 
 def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
     pedidos = []
@@ -81,13 +56,14 @@ def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
 
         if opciones:
             mejor_opcion = min(opciones, key=lambda x: x["costo_total"])
-            realizar_pedido(
-                sede_origen=sede_actual,
-                sede_destino=mejor_opcion["sede"],
-                piezas_requeridas={pieza: cantidad},
-                distancia=mejor_opcion["distancia"],
-                pedidos=pedidos
-            )
+            pedidos.append({
+                "pieza": pieza,
+                "cantidad": cantidad,
+                "sede_origen": mejor_opcion["sede"],
+                "sede_destino": sede_actual.nombre,
+                "costo_transporte": mejor_opcion["costo_total"] - sede_actual.calcular_costo_transporte(mejor_opcion["sede"]),
+                "tiempo_estimado": mejor_opcion["distancia"] / Pedido.VELOCIDAD
+            })
 
     return pedidos
 
