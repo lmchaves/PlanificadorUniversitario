@@ -1,5 +1,11 @@
 from dataclasses import dataclass
 from math import radians, sin, cos, sqrt, atan2
+from typing import NamedTuple
+
+class InventarioItem(NamedTuple):
+    cantidad: int
+    precio_unitario: float
+
 
 @dataclass()
 class Sede:
@@ -16,10 +22,9 @@ class Sede:
     nombre: str
     ubicacion_latitude: float
     ubicacion_longitude: float
-    inventario: dict[str, tuple[int, float]]
+    inventario: dict[str, InventarioItem]
     
-    R = 6371.0 
-
+    RADIO_TIERRA_KM  = 6371.0 
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
@@ -30,49 +35,36 @@ class Sede:
         if self.ubicacion_longitude < -180 or self.ubicacion_longitude > 180:
             raise ValueError("La longitud debe estar en el rango [-180, 180].")
 
-        for pieza, (cantidad, _) in self.inventario.items():
-            if cantidad < 0:
-                raise ValueError("Las cantidades de la pieza " + pieza + " en el inventario no pueden ser negativas.")   
+        for pieza, item in self.inventario.items():
+            if not isinstance(item, InventarioItem):
+                raise ValueError(f"El valor asociado a la pieza {pieza} debe ser un InventarioItem.")
+            if item.cantidad < 0:
+                raise ValueError(f"La cantidad de la pieza {pieza} no puede ser negativa.")
             
 
-    def get_inventario(self, pieza: str = None) -> dict | tuple:
-        """
-        Obtiene el inventario completo o la información de una pieza específica.
+    def obtener_inventario_completo(self) -> dict:
+        return self.inventario
 
-        Args:
-            pieza (str): Nombre de la pieza para consultar (opcional).
-
-        Returns:
-            dict | tuple: Si `pieza` es None, devuelve el inventario completo como un diccionario.
-                          Si se especifica `pieza`, devuelve una tupla con (cantidad, precio) o 
-                          lanza un ValueError si la pieza no existe.
-        """
-        if pieza is None:
-            return self.inventario
-        elif pieza in self.inventario:
-            return self.inventario[pieza]
-        else:
-            raise ValueError(f"La pieza '{pieza}' no está disponible en el inventario.")
-          
         
-    def añadir_piezas(self, piezas_requeridas: dict[str, int]):
+    def añadir_piezas(self, piezas_requeridas: dict[str, int], precio_unitario: float = 0.0):
         """
         Añade nuevas piezas al inventario o actualiza las cantidades si ya existen.
 
         Args:
             piezas_requeridas (dict[str, int]): Diccionario con las piezas requeridas y sus cantidades.
+            precio_unitario (float): Precio unitario de las piezas nuevas. Si no se especifica, se usa 0.0.
         """
         for pieza, cantidad in piezas_requeridas.items():
             if cantidad < 0:
                 raise ValueError(f"La cantidad de la pieza {pieza} no puede ser negativa.")
             
             if pieza in self.inventario:
-                cantidad_existente, costo_unitario = self.inventario[pieza]
-                nueva_cantidad = cantidad_existente + cantidad
-                self.inventario[pieza] = (nueva_cantidad, costo_unitario)
+                item_actual = self.inventario[pieza]
+                nueva_cantidad = item_actual.cantidad + cantidad
+                self.inventario[pieza] = InventarioItem(nueva_cantidad, item_actual.precio_unitario)
             else:
-                costo_unitario = 0.0  
-                self.inventario[pieza] = (cantidad, costo_unitario)
+                self.inventario[pieza] = InventarioItem(cantidad, precio_unitario)
+
     
     
     def calcular_distancia(self, otra_sede: 'Sede') -> float:
@@ -85,12 +77,13 @@ class Sede:
         Returns:
             float: Distancia en kilómetros.
         """
+         
 
         dlat = radians(otra_sede.ubicacion_latitude - self.ubicacion_latitude)
         dlon = radians(otra_sede.ubicacion_longitude - self.ubicacion_longitude)
         a = sin(dlat / 2) ** 2 + cos(radians(self.ubicacion_latitude)) * cos(radians(otra_sede.ubicacion_latitude)) * sin(dlon / 2) ** 2
         c = 2 * atan2(sqrt(a), sqrt(1 - a))
-        distancia = Sede.R * c
+        distancia = Sede.RADIO_TIERRA_KM * c
 
         return distancia
     
@@ -105,10 +98,8 @@ class Sede:
         Returns:
             bool: True si la pieza está disponible en cantidad suficiente, False en caso contrario.
         """
-        if pieza in self.inventario:
-            cantidad_disponible, _ = self.inventario[pieza]
-            return cantidad_disponible >= cantidad_requerida
-        return False
+        item = self.inventario.get(pieza)
+        return item is not None and item.cantidad >= cantidad_requerida
     
     def calcular_costo_transporte(self, sede_destino) -> float:
         """
@@ -135,12 +126,13 @@ def crear_inventario(dataframe, cantidad_fija):
         cantidad_fija (int): Cantidad fija asignada a cada pieza.
 
     Returns:
-        dict: Inventario con nombre de la pieza como clave y una tupla (cantidad, precio) como valor.
+        dict: Inventario con nombre de la pieza como clave y `InventarioItem` como valor.
     """
     inventario = {}
     for _, row in dataframe.iterrows():
         pieza = row['Pieza']
         precio = row['Precio (€)']
-        inventario[pieza] = (cantidad_fija, precio)
+        inventario[pieza] = InventarioItem(cantidad=cantidad_fija, precio_unitario=precio)
     return inventario
+
 
