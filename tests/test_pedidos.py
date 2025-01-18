@@ -1,5 +1,4 @@
 import pytest
-from pedido import seleccionar_sede_optima
 from sede  import Sede, InventarioItem
 
 @pytest.fixture
@@ -57,30 +56,30 @@ def setup_data():
 def test_seleccionar_sede_optima_por_pieza(setup_data):
     sedes, sede_principal, piezas_requeridas = setup_data
 
-    resultado = seleccionar_sede_optima(piezas_requeridas, sedes, sede_principal)
+    resultado = Sede.seleccionar_sede_optima(piezas_requeridas, sedes, sede_principal)
 
     assert len(resultado) == 3, f"Se esperaba 3 piezas, pero obtuve {len(resultado)}"
 
     pedido_motor = next((p for p in resultado if p["pieza"] == "Motor"), None)
     assert pedido_motor is not None, "No se encontró el pedido para 'Motor'"
     assert pedido_motor["cantidad"] == 3, f"Se esperaba 3 motores, pero se obtuvo {pedido_motor['cantidad']}"
-    assert pedido_motor["sede_origen"].nombre == "Córdoba", f"Se esperaba que la sede origen fuera 'Córdoba', pero fue {pedido_motor['sede_origen'].nombre}"
+    assert pedido_motor["sede_origen"] == "Córdoba", f"Se esperaba que la sede origen fuera 'Córdoba', pero fue {pedido_motor['sede_origen']}"
 
     pedido_alternador = next((p for p in resultado if p["pieza"] == "Alternador"), None)
     assert pedido_alternador is not None, "No se encontró el pedido para 'Alternador'"
     assert pedido_alternador["cantidad"] == 2, f"Se esperaba 2 alternadores, pero se obtuvo {pedido_alternador['cantidad']}"
-    assert pedido_alternador["sede_origen"].nombre == "Córdoba", f"Se esperaba que la sede origen fuera 'Córdoba', pero fue {pedido_alternador['sede_origen'].nombre}"
+    assert pedido_alternador["sede_origen"] == "Córdoba", f"Se esperaba que la sede origen fuera 'Córdoba', pero fue {pedido_alternador['sede_origen']}"
 
     pedido_correa = next((p for p in resultado if p["pieza"] == "Correa de distribución"), None)
     assert pedido_correa is not None, "No se encontró el pedido para 'Correa de distribución'"
     assert pedido_correa["cantidad"] == 1, f"Se esperaba 1 correa de distribución, pero se obtuvo {pedido_correa['cantidad']}"
-    assert pedido_correa["sede_origen"].nombre == "Málaga", f"Se esperaba que la sede origen fuera 'Málaga', pero fue {pedido_correa['sede_origen'].nombre}"
+    assert pedido_correa["sede_origen"] == "Málaga", f"Se esperaba que la sede origen fuera 'Málaga', pero fue {pedido_correa['sede_origen']}"
 
 
 def test_calcular_costos_hora(setup_data):
     sedes, sede_principal, piezas_requeridas = setup_data
 
-    resultado = seleccionar_sede_optima(piezas_requeridas, sedes, sede_principal)
+    resultado = Sede.seleccionar_sede_optima(piezas_requeridas, sedes, sede_principal)
 
     for pedido in resultado:
         assert pedido["costo_transporte"] > 0, "El costo total debe ser mayor a cero"
@@ -93,7 +92,7 @@ def test_piezas_no_disponibles(setup_data):
     sedes, sede_actual, _ = setup_data
 
     piezas_requeridas_no_disponibles = {"pieza_d": 1}  
-    resultado = seleccionar_sede_optima(piezas_requeridas_no_disponibles, sedes, sede_actual)
+    resultado = Sede.seleccionar_sede_optima(piezas_requeridas_no_disponibles, sedes, sede_actual)
 
     assert resultado == []
 
