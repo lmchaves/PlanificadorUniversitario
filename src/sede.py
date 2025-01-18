@@ -42,31 +42,6 @@ class Sede:
                 raise ValueError(f"La cantidad de la pieza {pieza} no puede ser negativa.")
             
 
-    def obtener_inventario_completo(self) -> dict:
-        return self.inventario
-
-        
-    def añadir_piezas(self, piezas_requeridas: dict[str, int], precio_unitario: float = 0.0):
-        """
-        Añade nuevas piezas al inventario o actualiza las cantidades si ya existen.
-
-        Args:
-            piezas_requeridas (dict[str, int]): Diccionario con las piezas requeridas y sus cantidades.
-            precio_unitario (float): Precio unitario de las piezas nuevas. Si no se especifica, se usa 0.0.
-        """
-        for pieza, cantidad in piezas_requeridas.items():
-            if cantidad < 0:
-                raise ValueError(f"La cantidad de la pieza {pieza} no puede ser negativa.")
-            
-            if pieza in self.inventario:
-                item_actual = self.inventario[pieza]
-                nueva_cantidad = item_actual.cantidad + cantidad
-                self.inventario[pieza] = InventarioItem(nueva_cantidad, item_actual.precio_unitario)
-            else:
-                self.inventario[pieza] = InventarioItem(cantidad, precio_unitario)
-
-    
-    
     def calcular_distancia(self, otra_sede: 'Sede') -> float:
         """
         Calcula la distancia entre la sede actual y otra sede utilizando la fórmula del haversine.
@@ -115,24 +90,3 @@ class Sede:
         coste_km=0.5
         distancia = self.calcular_distancia(sede_destino)  
         return distancia * coste_km
-
-
-def crear_inventario(dataframe, cantidad_fija):
-    """
-    Convierte un DataFrame de Excel en un diccionario de inventario.
-
-    Args:
-        dataframe (pd.DataFrame): DataFrame con las columnas 'Pieza' y 'Precio (€)'.
-        cantidad_fija (int): Cantidad fija asignada a cada pieza.
-
-    Returns:
-        dict: Inventario con nombre de la pieza como clave y `InventarioItem` como valor.
-    """
-    inventario = {}
-    for _, row in dataframe.iterrows():
-        pieza = row['Pieza']
-        precio = row['Precio (€)']
-        inventario[pieza] = InventarioItem(cantidad=cantidad_fija, precio_unitario=precio)
-    return inventario
-
-
