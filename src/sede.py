@@ -81,28 +81,13 @@ class Sede:
             item = self.inventario[pieza]
             return item.cantidad >= cantidad_requerida
         return False
-    
-    def calcular_costo_transporte(self, sede_destino) -> float:
-        """
-        Calcula el costo de transporte entre la sede actual y otra sede basado en la distancia.
 
-        Args:
-            sede_destino (Sede): La sede de destino a la que se enviarán las piezas.
-            coste_km (float): Costo por kilómetro de transporte. Por defecto es 0.5.
-
-        Returns:
-            float: El costo de transporte calculado.
-        """
-        coste_km=0.5
-        distancia = self.calcular_distancia(sede_destino)  
-        return distancia * coste_km
-    
     @staticmethod
     def seleccionar_sede_optima(pieza, cantidad, sedes, sede_actual):
         opciones = [
             {
                 "sede": sede,
-                "costo_total": sede.inventario[pieza].precio_unitario * cantidad + sede_actual.calcular_costo_transporte(sede),
+                "costo_total": sede.inventario[pieza].precio_unitario * cantidad + (sede_actual.calcular_distancia(sede) * Sede.COSTE_KM),
                 "distancia": sede_actual.calcular_distancia(sede),
             }
             for sede in sedes
