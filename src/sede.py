@@ -26,14 +26,16 @@ class Sede:
     
     RADIO_TIERRA_KM  = 6371.0 
     VELOCIDAD= 80  
+    LATIUD=90
+    LONGITUD=180
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
             raise ValueError("El inventario debe ser un diccionario.")
 
-        if self.ubicacion_latitude < -90 or self.ubicacion_latitude > 90:
+        if self.ubicacion_latitude < -Sede.LATIUD or self.ubicacion_latitude > Sede.LATIUD:
             raise ValueError("La latitud debe estar en el rango [-90, 90].")
-        if self.ubicacion_longitude < -180 or self.ubicacion_longitude > 180:
+        if self.ubicacion_longitude < -Sede.LONGITUD or self.ubicacion_longitude > Sede.LONGITUD:
             raise ValueError("La longitud debe estar en el rango [-180, 180].")
 
         for pieza, item in self.inventario.items():
@@ -63,7 +65,7 @@ class Sede:
 
         return distancia
     
-    def tiene_pieza_disponible(self, pieza: str, cantidad_requerida: int) -> bool:
+    def devuelve_pieza_disponible(self, pieza: str, cantidad_requerida: int) -> bool:
         """
         Verifica si la sede tiene una cantidad suficiente de una pieza específica.
 
@@ -72,9 +74,9 @@ class Sede:
             cantidad_requerida (int): Cantidad requerida de la pieza.
 
         Returns:
-            bool: True si la pieza está disponible en cantidad suficiente, False en caso contrario.
+            InventarioItem: Devuelve la pieza si está disponible en cantidad suficiente.
         """
-        item = self.inventario.get(pieza)
+        item = self.inventario[pieza]
         return item is not None and item.cantidad >= cantidad_requerida
     
     def calcular_costo_transporte(self, sede_destino) -> float:
@@ -104,7 +106,7 @@ class Sede:
                         "costo_total": sede.inventario[pieza][1] * cantidad + sede_actual.calcular_costo_transporte(sede),
                         "distancia": sede_actual.calcular_distancia(sede),
                     },
-                    filter(lambda sede: sede.tiene_pieza_disponible(pieza, cantidad), sedes),
+                    filter(lambda sede: sede.devuelve_pieza_disponible(pieza, cantidad), sedes),
                 )
             )
 
