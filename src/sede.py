@@ -28,6 +28,7 @@ class Sede:
     VELOCIDAD= 80  
     LATIUD=90
     LONGITUD=180
+    COSTE_KM=0.5
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
@@ -65,7 +66,7 @@ class Sede:
 
         return distancia
     
-    def devuelve_pieza_disponible(self, pieza: str, cantidad_requerida: int) -> bool:
+    def verificar_pieza_disponible(self, pieza: str, cantidad_requerida: int) -> bool:
         """
         Verifica si la sede tiene una cantidad suficiente de una pieza específica.
 
@@ -74,10 +75,12 @@ class Sede:
             cantidad_requerida (int): Cantidad requerida de la pieza.
 
         Returns:
-            InventarioItem: Devuelve la pieza si está disponible en cantidad suficiente.
+            bool: True si la pieza está disponible en cantidad suficiente, False en caso contrario.
         """
-        item = self.inventario[pieza]
-        return item is not None and item.cantidad >= cantidad_requerida
+        if pieza in self.inventario:
+            item = self.inventario[pieza]
+            return item.cantidad >= cantidad_requerida
+        return False
     
     def calcular_costo_transporte(self, sede_destino) -> float:
         """
@@ -95,30 +98,30 @@ class Sede:
         return distancia * coste_km
     
     @staticmethod
-    def seleccionar_sede_optima(piezas_requeridas, sedes, sede_actual):
+    def seleccionar_sede_optima(pieza, cantidad, sedes, sede_actual):
+        opciones = [
+            {
+                "sede": sede,
+                "costo_total": sede.inventario[pieza].precio_unitario * cantidad + sede_actual.calcular_costo_transporte(sede),
+                "distancia": sede_actual.calcular_distancia(sede),
+            }
+            for sede in sedes
+            if sede.verificar_pieza_disponible(pieza, cantidad)
+        ]
+        return min(opciones, key=lambda x: x["costo_total"], default=None)
+    
+    @staticmethod
+    def generar_pedidos(piezas_requeridas, sedes, sede_actual):
         pedidos = []
-
         for pieza, cantidad in piezas_requeridas.items():
-            opciones = list(
-                map(
-                    lambda sede: {
-                        "sede": sede,
-                        "costo_total": sede.inventario[pieza][1] * cantidad + sede_actual.calcular_costo_transporte(sede),
-                        "distancia": sede_actual.calcular_distancia(sede),
-                    },
-                    filter(lambda sede: sede.devuelve_pieza_disponible(pieza, cantidad), sedes),
-                )
-            )
-
-            if opciones:
-                mejor_opcion = min(opciones, key=lambda x: x["costo_total"])
+            mejor_opcion = Sede.seleccionar_sede_optima(pieza, cantidad, sedes, sede_actual)
+            if mejor_opcion:
                 pedidos.append({
                     "pieza": pieza,
                     "cantidad": cantidad,
                     "sede_origen": mejor_opcion["sede"].nombre,
                     "sede_destino": sede_actual.nombre,
-                    "costo_transporte": mejor_opcion["costo_total"] - sede_actual.calcular_costo_transporte(mejor_opcion["sede"]),
+                    "costo_transporte": mejor_opcion["costo_total"] - mejor_opcion["sede"].inventario[pieza].precio_unitario * cantidad,
                     "tiempo_estimado": mejor_opcion["distancia"] / Sede.VELOCIDAD,
                 })
-
         return pedidos
