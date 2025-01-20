@@ -36,5 +36,5 @@ Un punto negativo es que no hay mucha documentación, debido al rápido ritmo de
 
 
 
-Elegiría UV por su rapidez, aunque varias cumplen el estándar [PEP 518](https://peps.python.org/pep-0518/). Aunque Poetry destaca en documentación, es más lento, y Hatch tiene menos recursos. PDM es mas lento qeu UV por eso escojo UV.
+Elegiría UV por su rapidez, aunque todas cumplen el estándar [PEP 518](https://peps.python.org/pep-0518/). Aunque Poetry destaca en documentación, es más lento, y Hatch tiene menos recursos. PDM es mas lento qeu UV por eso escojo UV.
 
