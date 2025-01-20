@@ -8,6 +8,6 @@ license = { text = "LICENSE.txt" }
 authors = [
     { name = "lmchaves", email = "lmchaveslop@gmail.com" },
 ]
-
-[tool.pdm.dev-dependencies]
-test = ["pytest"]
+dependencies = [
+    "pytest>=8.3.3",
+]
