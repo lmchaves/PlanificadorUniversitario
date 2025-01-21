@@ -27,11 +27,8 @@ class Sede:
     inventario: dict[str, InventarioItem]
     
     RADIO_TIERRA_KM  = 6371.0 
-<<<<<<< HEAD
     VELOCIDAD= 80  
     COSTE_KM=0.5
-=======
->>>>>>> 58ddb7d (fix #26 #34: eliminamos las funciones estaticas)
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
