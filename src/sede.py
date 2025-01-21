@@ -27,8 +27,11 @@ class Sede:
     inventario: dict[str, InventarioItem]
     
     RADIO_TIERRA_KM  = 6371.0 
+<<<<<<< HEAD
     VELOCIDAD= 80  
     COSTE_KM=0.5
+=======
+>>>>>>> 58ddb7d (fix #26 #34: eliminamos las funciones estaticas)
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
@@ -81,32 +84,3 @@ class Sede:
             item = self.inventario[pieza]
             return item.cantidad >= cantidad_requerida
         return False
-
-    @staticmethod
-    def seleccionar_sede_optima(pieza, cantidad, sedes, sede_actual):
-        opciones = [
-            {
-                "sede": sede,
-                "costo_total": sede.inventario[pieza].precio_unitario * cantidad + (sede_actual.calcular_distancia(sede) * Sede.COSTE_KM),
-                "distancia": sede_actual.calcular_distancia(sede),
-            }
-            for sede in sedes
-            if sede.verificar_pieza_disponible(pieza, cantidad)
-        ]
-        return min(opciones, key=lambda x: x["costo_total"], default=None)
-    
-    @staticmethod
-    def generar_pedidos(piezas_requeridas, sedes, sede_actual):
-        pedidos = []
-        for pieza, cantidad in piezas_requeridas.items():
-            mejor_opcion = Sede.seleccionar_sede_optima(pieza, cantidad, sedes, sede_actual)
-            if mejor_opcion:
-                pedidos.append({
-                    "pieza": pieza,
-                    "cantidad": cantidad,
-                    "sede_origen": mejor_opcion["sede"].nombre,
-                    "sede_destino": sede_actual.nombre,
-                    "costo_transporte": mejor_opcion["costo_total"] - mejor_opcion["sede"].inventario[pieza].precio_unitario * cantidad,
-                    "tiempo_estimado": mejor_opcion["distancia"] / Sede.VELOCIDAD,
-                })
-        return pedidos
