@@ -1,6 +1,12 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
 import pytest
-from sede  import Sede, InventarioItem
-from gestorPedidos  import GestorDePedidos
+from sede import Sede, InventarioItem  # Ahora debería funcionar
+from gestorPedidos import GestorDePedidos
+
 
 @pytest.fixture
 def setup_data():
