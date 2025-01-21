@@ -20,7 +20,9 @@ Para ver si la sintaxis es correcta ejcuta:
 make check
 
 Para poder realizar los test:
-make check test
+make test
+
+
 
 Y ejecuta make help para ver todas las opciones.
 
