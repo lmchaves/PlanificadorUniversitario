@@ -6,6 +6,8 @@ class InventarioItem(NamedTuple):
     cantidad: int
     precio_unitario: float
 
+LATIUD=90
+LONGITUD=180
 
 @dataclass()
 class Sede:
@@ -26,17 +28,15 @@ class Sede:
     
     RADIO_TIERRA_KM  = 6371.0 
     VELOCIDAD= 80  
-    LATIUD=90
-    LONGITUD=180
     COSTE_KM=0.5
 
     def __post_init__(self):
         if not isinstance(self.inventario, dict):
             raise ValueError("El inventario debe ser un diccionario.")
 
-        if self.ubicacion_latitude < -Sede.LATIUD or self.ubicacion_latitude > Sede.LATIUD:
+        if self.ubicacion_latitude < -LATIUD or self.ubicacion_latitude > LATIUD:
             raise ValueError("La latitud debe estar en el rango [-90, 90].")
-        if self.ubicacion_longitude < -Sede.LONGITUD or self.ubicacion_longitude > Sede.LONGITUD:
+        if self.ubicacion_longitude < -LONGITUD or self.ubicacion_longitude > LONGITUD:
             raise ValueError("La longitud debe estar en el rango [-180, 180].")
 
         for pieza, item in self.inventario.items():
@@ -60,9 +60,9 @@ class Sede:
 
         dlat = radians(otra_sede.ubicacion_latitude - self.ubicacion_latitude)
         dlon = radians(otra_sede.ubicacion_longitude - self.ubicacion_longitude)
-        a = sin(dlat / 2) ** 2 + cos(radians(self.ubicacion_latitude)) * cos(radians(otra_sede.ubicacion_latitude)) * sin(dlon / 2) ** 2
-        c = 2 * atan2(sqrt(a), sqrt(1 - a))
-        distancia = Sede.RADIO_TIERRA_KM * c
+        factor_distancia_angular = sin(dlat / 2) ** 2 + cos(radians(self.ubicacion_latitude)) * cos(radians(otra_sede.ubicacion_latitude)) * sin(dlon / 2) ** 2
+        angulo_central = 2 * atan2(sqrt(factor_distancia_angular), sqrt(1 - factor_distancia_angular))
+        distancia = Sede.RADIO_TIERRA_KM * angulo_central
 
         return distancia
     
