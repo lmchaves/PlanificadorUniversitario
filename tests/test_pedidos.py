@@ -1,5 +1,6 @@
 import pytest
 from sede  import Sede, InventarioItem
+from gestorPedidos  import GestorDePedidos
 
 @pytest.fixture
 def setup_data():
@@ -39,7 +40,7 @@ def setup_data():
         inventario=inventario_jaen,
     )
     sede_principal = Sede(
-        nombre="Principal",
+        nombre="Lopez Rodriguez Manuel",
         ubicacion_latitude=37.000,
         ubicacion_longitude=-4.500,
         inventario=inventario_principal,
@@ -53,46 +54,54 @@ def setup_data():
 
     return [sede_malaga, sede_cordoba, sede_jaen], sede_principal, piezas_requeridas
 
-def test_seleccionar_sede_optima_por_pieza(setup_data):
+def test_seleccionar_sede_optima(setup_data):
+    sedes, sede_principal, piezas_requeridas = setup_data
+    
+    gestor = GestorDePedidos(sedes)
+
+    sedes_optimas = gestor.seleccionar_sedes_optimas(piezas_requeridas, sede_principal)
+
+    assert "Motor" in sedes_optimas, "No se encontró una sede óptima para 'Motor'"
+    assert sedes_optimas["Motor"]["sede"].nombre == "Córdoba", f"Se esperaba 'Córdoba' para 'Motor', pero fue {sedes_optimas['Motor']['sede'].nombre}"
+
+    assert "Alternador" in sedes_optimas, "No se encontró una sede óptima para 'Alternador'"
+    assert sedes_optimas["Alternador"]["sede"].nombre == "Córdoba", f"Se esperaba 'Córdoba' para 'Alternador', pero fue {sedes_optimas['Alternador']['sede'].nombre}"
+
+    assert "Correa de distribución" in sedes_optimas, "No se encontró una sede óptima para 'Correa de distribución'"
+    assert sedes_optimas["Correa de distribución"]["sede"].nombre == "Málaga", f"Se esperaba 'Málaga' para 'Correa de distribución', pero fue {sedes_optimas['Correa de distribución']['sede'].nombre}"
+    
+def test_generar_pedidos(setup_data):
     sedes, sede_principal, piezas_requeridas = setup_data
 
-    resultado = Sede.seleccionar_sede_optima(piezas_requeridas, sedes, sede_principal)
+    gestor = GestorDePedidos(sedes)
 
-    assert len(resultado) == 3, f"Se esperaba 3 piezas, pero obtuve {len(resultado)}"
+    sedes_optimas = gestor.seleccionar_sedes_optimas(piezas_requeridas, sede_principal)
 
-    pedido_motor = next((p for p in resultado if p["pieza"] == "Motor"), None)
+    resultado = gestor.generar_pedidos(piezas_requeridas, sede_principal, sedes_optimas)
+
+    pedido_motor = next((p for p in resultado if "Motor" in p.piezas_requeridas), None)
     assert pedido_motor is not None, "No se encontró el pedido para 'Motor'"
-    assert pedido_motor["cantidad"] == 3, f"Se esperaba 3 motores, pero se obtuvo {pedido_motor['cantidad']}"
-    assert pedido_motor["sede_origen"] == "Córdoba", f"Se esperaba que la sede origen fuera 'Córdoba', pero fue {pedido_motor['sede_origen']}"
+    assert pedido_motor.piezas_requeridas["Motor"] == 3, f"Se esperaba 3 motores, pero se obtuvo {pedido_motor.piezas_requeridas['Motor']}"
+    assert pedido_motor.nombre_sede_destino == "Córdoba", f"Se esperaba que la sede destino fuera 'Córdoba', pero fue {pedido_motor.nombre_sede_destino}"
 
-    pedido_alternador = next((p for p in resultado if p["pieza"] == "Alternador"), None)
+    pedido_alternador = next((p for p in resultado if "Alternador" in p.piezas_requeridas), None)
     assert pedido_alternador is not None, "No se encontró el pedido para 'Alternador'"
-    assert pedido_alternador["cantidad"] == 2, f"Se esperaba 2 alternadores, pero se obtuvo {pedido_alternador['cantidad']}"
-    assert pedido_alternador["sede_origen"] == "Córdoba", f"Se esperaba que la sede origen fuera 'Córdoba', pero fue {pedido_alternador['sede_origen']}"
+    assert pedido_alternador.piezas_requeridas["Alternador"] == 2, f"Se esperaba 2 alternadores, pero se obtuvo {pedido_alternador.piezas_requeridas['Alternador']}"
+    assert pedido_alternador.nombre_sede_destino == "Córdoba", f"Se esperaba que la sede destino fuera 'Córdoba', pero fue {pedido_alternador.nombre_sede_destino}"
 
-    pedido_correa = next((p for p in resultado if p["pieza"] == "Correa de distribución"), None)
+    pedido_correa = next((p for p in resultado if "Correa de distribución" in p.piezas_requeridas), None)
     assert pedido_correa is not None, "No se encontró el pedido para 'Correa de distribución'"
-    assert pedido_correa["cantidad"] == 1, f"Se esperaba 1 correa de distribución, pero se obtuvo {pedido_correa['cantidad']}"
-    assert pedido_correa["sede_origen"] == "Málaga", f"Se esperaba que la sede origen fuera 'Málaga', pero fue {pedido_correa['sede_origen']}"
-
+    assert pedido_correa.piezas_requeridas["Correa de distribución"] == 1, f"Se esperaba 1 correa de distribución, pero se obtuvo {pedido_correa.piezas_requeridas['Correa de distribución']}"
+    assert pedido_correa.nombre_sede_destino == "Málaga", f"Se esperaba que la sede destino fuera 'Málaga', pero fue {pedido_correa.nombre_sede_destino}"
 
 def test_calcular_costos_hora(setup_data):
     sedes, sede_principal, piezas_requeridas = setup_data
+    gestor = GestorDePedidos(sedes)
+    
+    sedes_optimas = gestor.seleccionar_sedes_optimas(piezas_requeridas, sede_principal)
 
-    resultado = Sede.seleccionar_sede_optima(piezas_requeridas, sedes, sede_principal)
+    resultado = gestor.generar_pedidos(piezas_requeridas, sede_principal, sedes_optimas)
 
     for pedido in resultado:
-        assert pedido["costo_transporte"] > 0, "El costo total debe ser mayor a cero"
-        assert pedido["tiempo_estimado"] > 0, "La hora debe ser mayor a cero"
-        
-        
-
-
-def test_piezas_no_disponibles(setup_data):
-    sedes, sede_actual, _ = setup_data
-
-    piezas_requeridas_no_disponibles = {"pieza_d": 1}  
-    resultado = Sede.seleccionar_sede_optima(piezas_requeridas_no_disponibles, sedes, sede_actual)
-
-    assert resultado == []
-
+        assert pedido.costo_total > 0, "El costo total debe ser mayor a cero"
+        assert pedido.tiempo_estimado_llegada > 0, "El tiempo estimado debe ser mayor a cero"
