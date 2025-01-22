@@ -29,7 +29,14 @@ Y ejecuta make help para ver todas las opciones.
 La documentación sobre la imagen escogida esta en [imagen docker](./docs/docker_images.md)
 
 Para realizar la ejecución del tests:
+
 docker run -u 1001 -t -v $(pwd):/app/test lmchaveslop/organizartaller   
+
+Si queremos ejecurtarlo en local:
+
+docker build -t prueba-local .
+
+docker run -u 1001 -t -v $(pwd):/app/test prueba-local
 
 ## Documentación adicional
 - [Historias de usuario](./docs/user-stories.md)
