@@ -2,25 +2,25 @@
 
 ## Criterios de evaluación
 
-Para seleccionar el gestor de dependencias más adecuado para este proyecto, se han considerado los siguientes criterios:
+Para seleccionar la imagen de docker mas adecuada para este proyecto, se han considerado los siguientes criterios:
 
 
 1. **Imágenes mantenidas:** Preferencia por herramientas activamente mantenidas y actualizadas para evitar problemas de tecnologías obsoletas.
 
-2. Tambien se va a tener en cuenta el peso de las imágenes.
+2. Tambien se va a tener en cuenta el peso final de las imágenes(con todas las herramientas necesarias).
 
 
 ## [Ubuntu](https://hub.docker.com/_/ubuntu)
-Está activamente mantenida con actualizaciones y versiones recientes, tiene un peso de 29MB (con alguans versiones mas ligeras pero debes configurar más cosas manualmente), es una buena eleción para tener el sistema como base y ya ir añdiendo las herramientas necesarias.
+Está activamente mantenida con actualizaciones y versiones recientes, es una buena eleción para tener el sistema como base y ya ir añdiendo las herramientas necesarias. Pero tiene un peso final de **543MB**.
 
 ## [Debian](https://hub.docker.com/_/debian)
-La última actualización fue de hace un par de semanas, por lo que esta activamente mantenido. En cuanto al peso varia dependiendo de la version que escojas, tenemos la base con un peso muy parecido a ubuntu, pero luego tenemos varias opciones slim: debian:bullseye-slim, debian:bookworm-slim, stable-slim con un peso aproximado de 22MB.
+La última actualización fue de hace un par de semanas, por lo que esta activamente mantenido. En cuanto al peso varia dependiendo de la version que escojas, tenemos la base con un peso muy parecido a ubuntu, pero luego tenemos varias opciones slim: debian:bullseye-slim con un peso de **460MB**, debian:bookworm-slim con peso **568MB** y debian normal **656MB**.
 
 ## [Alpine](https://hub.docker.com/_/alpine)
-La última actualización fue de hace unos días, siendo una herramieta activa y mantenida, con un peso mucho menor al de las anteriores, de tan slo 5MB, sin funcionalides extra siendo mínima y eficiente.
+La última actualización fue de hace unos días, siendo una herramieta activa y mantenida, con un peso mucho menor al de las anteriores, de tan solo 5MB de imagen base, sin funcionalides extra siendo mínima y eficiente. Pero con las herramientas,tiene un peso final de **114MB**.
 
 ## [Python](https://hub.docker.com/_/python)
-Ya que estoy utilizando python, tenemos que ver esta opción en la que ya nos viene instalado python, pero hay diversas opciones, de las ya comentadas anteriormente como Alpine(muy ligera), debian:bookworm-slim (aproxiamdamente 150MB demasiado pesada), python:bullseye-slim (aproximadamente 52 MB mejor apoción que la anterior). Con la última acutalzición de días, por lo que esta mantenida.
+Ya que estoy utilizando python, tenemos que ver esta opción en la que ya nos viene instalado python, pero hay diversas opciones, de las ya comentadas anteriormente como Alpine(muy ligera) peso final **85MB**, debian:bookworm-slim con peso final **163MB**, python:bullseye-slim con un peso final de **161MB**. Con la última acutalzición de días, por lo que esta mantenida.
 
 ## [frostming/pdm](https://hub.docker.com/r/frostming/pdm)
 
