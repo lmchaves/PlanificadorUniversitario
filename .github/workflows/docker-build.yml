@@ -5,7 +5,6 @@ on:
     paths:
       - 'Dockerfile'
       - 'Makefile'
-      - 'pyproject.toml'
 
 jobs:
   build_publish:
