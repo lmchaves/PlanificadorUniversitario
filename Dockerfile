@@ -1,9 +1,7 @@
 FROM python:alpine
 
 RUN apk add --no-cache \
-    make \
-    curl\   
-    bash 
+    make 
 
 
 RUN adduser -D -h /home/userTest userTest
@@ -18,7 +16,7 @@ ENV PATH="/home/userTest/.local/bin:$PATH"
 
 USER userTest
 
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+RUN wget -qO- https://astral.sh/uv/install.sh | sh
 
 ENV UV_CACHE_DIR=/home/userTest/.cache/uv
 ENV UV_PROJECT_ENVIRONMENT=/home/userTest/.venv
