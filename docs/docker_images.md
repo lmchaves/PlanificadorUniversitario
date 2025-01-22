@@ -28,6 +28,8 @@ Esta es la imagen de frostming creador de pdm, la cual utiliza Debian slim como 
 
 ## Conlusión
 
-Hay varias opciones para elegir una imagen base para el proyecto. Las imágenes como Ubuntu, Debian o Alpine solo incluyen el sistema operativo, y todas están activamente mantenidas. Alpine destaca por ser la más ligera, pero presenta el inconveniente de que debemos instalar Python y sus dependencias adicionales, lo que puede aumentar el tiempo de construcción y el tamaño final.
+Hay varias opciones para elegir una imagen base para el proyecto. Las imágenes como Ubuntu, Debian o Alpine solo incluyen el sistema operativo, y todas están activamente mantenidas. Alpine destaca por ser la más ligera, pero presenta el inconveniente de que debemos instalar Python y sus dependencias adicionales, lo que puede aumentar el tamaño final.
 
 Dentro de las imágenes que ya incluyen Python, tenemos opciones como la imagen frostming/pdm, que viene con PDM preinstalado. Sin embargo, esta imagen no está activamente mantenida, ya que no ha recibido actualizaciones en los últimos tres años. Debido a esto, me decantaré por la imagen oficial de Python sobre Alpine, ya que proporciona un mantenimiento activo y la inclusión de Python sin necesidad de instalaciones adicionales.
+
+El peso de las imágenes finales estan [aquí](https://github.com/lmchaves/OrganizarTaller/tree/Objetivo-1/docs/imgs/peso_imagenes.png).
