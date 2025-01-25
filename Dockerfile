@@ -1,8 +1,7 @@
 FROM python:alpine
 
 RUN apk add --no-cache \
-    make 
-
+    make
 
 RUN adduser -D -h /home/userTest userTest
 
@@ -11,12 +10,15 @@ RUN mkdir -p /home/userTest/.cache && \
     mkdir -p /home/userTest/.venv && \
     chmod -R a+w /home/userTest/.venv 
 
-
+# Configurar PATH para pipx y Python
 ENV PATH="/home/userTest/.local/bin:$PATH"
+ENV PIPX_BIN_DIR="/home/userTest/.local/bin"
+ENV PIPX_HOME="/home/userTest/.local/pipx"
 
 USER userTest
 
-RUN wget -qO- https://astral.sh/uv/install.sh | sh
+RUN python3 -m pip install --user pipx && \
+    pipx install uv
 
 ENV UV_CACHE_DIR=/home/userTest/.cache/uv
 ENV UV_PROJECT_ENVIRONMENT=/home/userTest/.venv
